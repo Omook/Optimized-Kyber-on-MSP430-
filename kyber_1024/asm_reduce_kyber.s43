@@ -1,0 +1,161 @@
+#include <msp430.h>
+
+#define         KYBER_Q r4
+#define         QINV        r5
+#define         f               r6
+#define         v               r7
+
+
+#define         res_lo     r8
+#define         res_hi     r9
+
+#define         zero    r10
+#define         word    r11
+
+#define         ptr     r12
+#define         forstop     r13
+#define         a     r14
+
+mont   macro
+                                                                                        
+         mov    @ptr, &MPYS
+         mov    f, &OP2
+         
+         mov    &RESLO, res_lo
+         mov    &RESHI, res_hi ;  a*b  
+         
+         mov    res_lo, &MPYS              
+         mov    QINV, &OP2 ; a*QINV
+                  
+         mov    &RESLO, &MPYS ; t*q
+         mov    KYBER_Q, &OP2
+         
+         ;sub    &RESLO, res_lo
+         sub   &RESHI, res_hi ;  a - t*q 
+         
+         mov    res_hi, 0(ptr)        ; high 16bit return
+         
+         add    #2, ptr
+         endm
+         
+
+//NAME asm_poly_tomont            ; module name
+PUBLIC asm_poly_tomont          ; make the main label vissible outside this module
+RSEG CODE              ; place program in 'CODE' segment
+
+
+
+asm_poly_tomont:
+         ;input :  int16_t  a, b
+         ;f = 1353 = (1ULL << 32) % Q
+         ;Q = 3329
+         ;QINV = -3327
+
+         push r4
+         push r5
+         push r6
+         push r7
+         push r8
+         push r9
+         push r10
+         push r11
+
+         mov    #1353, f    
+         mov    #3329, KYBER_Q
+         mov    #-3327, QINV
+         
+         mov    ptr, forstop
+         add    #512, forstop
+         
+loop_mont:         
+         mont
+         cmp    forstop, ptr
+         jn     loop_mont
+          
+          pop    r11
+          pop    r10
+          pop    r9
+          pop    r8
+          pop    r7
+          pop    r6
+          pop    r5
+          pop    r4
+          
+         RETA
+
+
+
+barrett   macro
+                                                                                
+         mov    @ptr, &MPYS 
+         mov    v,  &OP2 ; t = v*a        
+         
+         ;add    word, &RESLO
+         ;addc   zero, &RESHI ; t += 32768
+         
+         mov    &RESHI, &MPYS
+         mov   KYBER_Q, &OP2 ; t *= KYBER_Q
+         
+         
+         sub    &RESLO, 0(ptr) ;  return a-t          
+         
+         add    #2, ptr
+         endm
+
+
+//NAME asm_barrett
+PUBLIC asm_poly_barrett         ; make the main label vissible outside this module
+RSEG CODE              ; place program in 'CODE' segment
+
+
+
+
+
+asm_poly_barrett:
+         ;v = 20 = ((1 << 16) + KYBER_Q / 2) / KYBER_Q;
+         ;Q = 3329
+         
+
+         push r4
+         push r5
+         push r6
+         push r7
+         push r8
+         push r9
+         push r10
+         push r11
+
+         mov    #20, v    
+         mov    #3329, KYBER_Q
+         ;clr    zero
+         ;mov    #0x8000, word
+         
+         mov    ptr, forstop
+         add    #512, forstop
+         
+loop_barrett:         
+         barrett
+         cmp    forstop, ptr
+         jn     loop_barrett
+          
+          pop    r11
+          pop    r10
+          pop    r9
+          pop    r8
+          pop    r7
+          pop    r6
+          pop    r5
+          pop    r4
+
+     
+         
+         RETA
+                 
+        
+END
+
+
+
+
+
+

@@ -1,0 +1,153 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out
+
+rule MAKEBROWSE
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out
+
+rule PDBLINK
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out
+
+
+
+#Build steps
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\cbd.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\cbd.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\cbd.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\cbd.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\cbd.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\Debug\Obj\\" --debug -D__MSP430F6779A__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlmfn.h" --core=430X --data_model=medium -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\cbd.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\cbd.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\fips202.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\fips202.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\fips202.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\fips202.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\fips202.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\Debug\Obj\\" --debug -D__MSP430F6779A__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlmfn.h" --core=430X --data_model=medium -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\fips202.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\fips202.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\indcpa.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\indcpa.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\indcpa.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\indcpa.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\indcpa.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\Debug\Obj\\" --debug -D__MSP430F6779A__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlmfn.h" --core=430X --data_model=medium -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\indcpa.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\indcpa.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\kem.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\kem.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\kem.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\kem.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\kem.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\Debug\Obj\\" --debug -D__MSP430F6779A__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlmfn.h" --core=430X --data_model=medium -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\kem.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\kem.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\main.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\main.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\main.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\main.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\Debug\Obj\\" --debug -D__MSP430F6779A__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlmfn.h" --core=430X --data_model=medium -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\main.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\main.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\ntt.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\ntt.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\ntt.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\ntt.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\ntt.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\Debug\Obj\\" --debug -D__MSP430F6779A__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlmfn.h" --core=430X --data_model=medium -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\ntt.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\ntt.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\poly.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\poly.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\poly.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\poly.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\poly.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\Debug\Obj\\" --debug -D__MSP430F6779A__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlmfn.h" --core=430X --data_model=medium -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\poly.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\poly.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\polyvec.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\polyvec.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\polyvec.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\polyvec.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\polyvec.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\Debug\Obj\\" --debug -D__MSP430F6779A__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlmfn.h" --core=430X --data_model=medium -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\polyvec.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\polyvec.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\reduce.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\reduce.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\reduce.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\reduce.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\reduce.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\Debug\Obj\\" --debug -D__MSP430F6779A__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlmfn.h" --core=430X --data_model=medium -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\reduce.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\reduce.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\symmetric-shake.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\symmetric-shake.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\symmetric-shake.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\symmetric-shake.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\symmetric-shake.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\Debug\Obj\\" --debug -D__MSP430F6779A__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlmfn.h" --core=430X --data_model=medium -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\symmetric-shake.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\symmetric-shake.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\verify.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\verify.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\verify.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\verify.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\verify.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\Debug\Obj\\" --debug -D__MSP430F6779A__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlmfn.h" --core=430X --data_model=medium -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\verify.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\verify.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\cbd.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\cbd.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\cbd.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\cbd.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\cbd.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\fips202.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\fips202.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\fips202.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\fips202.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\fips202.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\indcpa.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\indcpa.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\indcpa.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\indcpa.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\indcpa.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\kem.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\kem.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\kem.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\kem.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\kem.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\main.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\main.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\main.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\main.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\main.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\ntt.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\ntt.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\ntt.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\ntt.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\ntt.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\poly.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\poly.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\poly.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\poly.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\poly.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\polyvec.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\polyvec.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\polyvec.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\polyvec.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\polyvec.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\reduce.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\reduce.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\reduce.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\reduce.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\reduce.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\symmetric-shake.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\symmetric-shake.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\symmetric-shake.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\symmetric-shake.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\symmetric-shake.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\verify.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\verify.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\verify.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\verify.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\verify.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber.pbw : MAKEBROWSE C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber.pbd
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber.pbd" -output "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber.pbw"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber_part0.pbi : PDBLINK C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\cbd.pbi |  $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\fips202.pbi $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\indcpa.pbi
+  flags = -M "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber_part0.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\cbd.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\fips202.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\indcpa.pbi"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber_part1.pbi : PDBLINK C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\kem.pbi |  $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\main.pbi $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\ntt.pbi
+  flags = -M "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber_part1.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\kem.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\main.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\ntt.pbi"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber_part2.pbi : PDBLINK C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\poly.pbi |  $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\polyvec.pbi $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\reduce.pbi
+  flags = -M "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber_part2.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\poly.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\polyvec.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\reduce.pbi"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber_part3.pbi : PDBLINK C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\symmetric-shake.pbi |  $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\verify.pbi
+  flags = -M "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber_part3.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\symmetric-shake.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\verify.pbi"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber.pbd : PDBLINK C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber_part0.pbi |  $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber_part1.pbi $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber_part2.pbi $
+C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber_part3.pbi
+  flags = -M "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber.pbd" "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber_part0.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber_part1.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber_part2.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\first_kyber\BrowseInfo\first_kyber_part3.pbi"
+
