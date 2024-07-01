@@ -1,0 +1,163 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out
+
+rule MAKEBROWSE
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out
+
+rule PDBLINK
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out
+
+
+
+#Build steps
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fips202.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\fips202.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fips202.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fips202.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\fips202.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\Debug\Obj\\" --debug -D__MSP430F67791__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlsfn.h" --core=430X --data_model=small -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fips202.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fips202.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fnt_main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\fnt_main.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fnt_main.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fnt_main.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\fnt_main.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\Debug\Obj\\" --debug -D__MSP430F67791__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlsfn.h" --core=430X --data_model=small -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fnt_main.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fnt_main.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\main.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\main.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\main.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\main.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\Debug\Obj\\" --debug -D__MSP430F67791__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlsfn.h" --core=430X --data_model=small -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\main.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\main.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\ntt.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\ntt.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\ntt.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\ntt.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\ntt.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\Debug\Obj\\" --debug -D__MSP430F67791__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlsfn.h" --core=430X --data_model=small -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\ntt.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\ntt.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\packing.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\packing.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\packing.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\packing.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\packing.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\Debug\Obj\\" --debug -D__MSP430F67791__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlsfn.h" --core=430X --data_model=small -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\packing.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\packing.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\poly.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\poly.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\poly.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\poly.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\poly.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\Debug\Obj\\" --debug -D__MSP430F67791__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlsfn.h" --core=430X --data_model=small -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\poly.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\poly.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\polyvec.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\polyvec.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\polyvec.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\polyvec.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\polyvec.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\Debug\Obj\\" --debug -D__MSP430F67791__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlsfn.h" --core=430X --data_model=small -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\polyvec.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\polyvec.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\randombytes.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\randombytes.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\randombytes.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\randombytes.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\randombytes.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\Debug\Obj\\" --debug -D__MSP430F67791__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlsfn.h" --core=430X --data_model=small -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\randombytes.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\randombytes.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\reduce.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\reduce.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\reduce.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\reduce.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\reduce.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\Debug\Obj\\" --debug -D__MSP430F67791__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlsfn.h" --core=430X --data_model=small -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\reduce.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\reduce.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\rounding.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\rounding.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\rounding.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\rounding.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\rounding.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\Debug\Obj\\" --debug -D__MSP430F67791__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlsfn.h" --core=430X --data_model=small -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\rounding.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\rounding.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\sign.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\sign.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\sign.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\sign.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\sign.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\Debug\Obj\\" --debug -D__MSP430F67791__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlsfn.h" --core=430X --data_model=small -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\sign.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\sign.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\symmetric-shake.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\symmetric-shake.c" -xcl_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\symmetric-shake.xcl" -macro_file "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\symmetric-shake.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\bin\icc430.exe" -u8_wrapper "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\iarconvert.exe"
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\symmetric-shake.c" -o "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\Debug\Obj\\" --debug -D__MSP430F67791__ -e --double=32 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\430\lib\dlib\dl430xlsfn.h" --core=430X --data_model=small -Ohs --multiplier=32 --hw_workaround=CPU40 --code_model=large --predef_macros "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\symmetric-shake.tmp"
+  rspfile_name = C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\symmetric-shake.xcl.rsp
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fips202.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fips202.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\fips202.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fips202.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fips202.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fnt_main.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fnt_main.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\fnt_main.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fnt_main.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fnt_main.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\main.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\main.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\main.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\main.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\main.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\ntt.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\ntt.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\ntt.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\ntt.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\ntt.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\packing.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\packing.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\packing.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\packing.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\packing.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\poly.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\poly.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\poly.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\poly.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\poly.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\polyvec.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\polyvec.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\polyvec.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\polyvec.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\polyvec.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\randombytes.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\randombytes.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\randombytes.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\randombytes.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\randombytes.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\reduce.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\reduce.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\reduce.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\reduce.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\reduce.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\rounding.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\rounding.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\rounding.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\rounding.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\rounding.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\sign.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\sign.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\sign.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\sign.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\sign.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\symmetric-shake.pbi : INDEXER C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\symmetric-shake.xcl |  $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\symmetric-shake.c
+  flags = "-out=C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\symmetric-shake.pbi" -f "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\symmetric-shake.xcl"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb.pbw : MAKEBROWSE C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb.pbd
+  flags = "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb.pbd" -output "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb.pbw"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb_part0.pbi : PDBLINK C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fips202.pbi |  $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fnt_main.pbi $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\main.pbi
+  flags = -M "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb_part0.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fips202.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\fnt_main.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\main.pbi"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb_part1.pbi : PDBLINK C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\ntt.pbi |  $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\packing.pbi $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\poly.pbi
+  flags = -M "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb_part1.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\ntt.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\packing.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\poly.pbi"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb_part2.pbi : PDBLINK C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\polyvec.pbi |  $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\randombytes.pbi $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\reduce.pbi
+  flags = -M "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb_part2.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\polyvec.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\randombytes.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\reduce.pbi"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb_part3.pbi : PDBLINK C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\rounding.pbi |  $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\sign.pbi $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\symmetric-shake.pbi
+  flags = -M "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb_part3.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\rounding.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\sign.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\symmetric-shake.pbi"
+
+build C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb.pbd : PDBLINK C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb_part0.pbi |  $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb_part1.pbi $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb_part2.pbi $
+C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb_part3.pbi
+  flags = -M "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb.pbd" "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb_part0.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb_part1.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb_part2.pbi" "C$:\Users\dong\Desktop\MSP430$ Code\test_dilithium3_yb\BrowseInfo\test_dilithium3_yb_part3.pbi"
+
