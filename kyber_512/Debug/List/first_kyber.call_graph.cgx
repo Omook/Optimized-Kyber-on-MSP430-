@@ -29,6 +29,11 @@
     </module>
     <module>
       <id>6</id>
+      <name>?xprintflarge</name>
+      <library>C:\Program Files\IAR Systems\Embedded Workbench 9.1\430\lib\dlib\dl430xlmfn.r43</library>
+    </module>
+    <module>
+      <id>7</id>
       <name>?xxmemxmalloc</name>
       <library>C:\Program Files\IAR Systems\Embedded Workbench 9.1\430\lib\dlib\dl430xlmfn.r43</library>
     </module>
@@ -37,343 +42,219 @@
     <function>
       <id>0</id>
       <name>asm_poly_basemul_kara</name>
-      <address>0x0000cab8</address>
+      <address>0x0000d30e</address>
     </function>
     <function>
       <id>1</id>
-      <name>asm_invntt_merging</name>
-      <address>0x0002b742</address>
-    </function>
-    <function>
-      <id>2</id>
       <name>asm_ntt_merging</name>
       <address>0x00038644</address>
     </function>
     <function>
-      <id>3</id>
+      <id>2</id>
       <name>asm_poly_tomont</name>
-      <address>0x0000d210</address>
+      <address>0x0000d9f6</address>
+    </function>
+    <function>
+      <id>3</id>
+      <name>asm_poly_barrett</name>
+      <address>0x0000da5a</address>
     </function>
     <function>
       <id>4</id>
-      <name>asm_poly_barrett</name>
-      <address>0x0000d274</address>
-    </function>
-    <function>
-      <id>5</id>
       <name>asm_keccak1600</name>
       <address>0x00010000</address>
     </function>
     <function>
-      <id>6</id>
+      <id>5</id>
       <name>PQCLEAN_KYBER512_CLEAN_poly_cbd_eta1</name>
-      <address>0x0000d15c</address>
+      <address>0x0000d942</address>
       <stack>36</stack>
     </function>
     <function>
-      <id>7</id>
-      <name>PQCLEAN_KYBER512_CLEAN_poly_cbd_eta2</name>
-      <address>0x0000d4bc</address>
-      <stack>36</stack>
-      <callee>58</callee>
-    </function>
-    <function>
-      <id>8</id>
+      <id>6</id>
       <name>keccak_absorb</name>
       <localIn>5</localIn>
-      <address>0x0000c1d8</address>
+      <address>0x0000c688</address>
       <stack>296</stack>
       <call>
         <stack>246</stack>
-        <callee>5</callee>
+        <callee>4</callee>
+      </call>
+    </function>
+    <function>
+      <id>7</id>
+      <name>keccak_squeezeblocks</name>
+      <localIn>5</localIn>
+      <address>0x0000daa8</address>
+      <stack>44</stack>
+      <callee>4</callee>
+    </function>
+    <function>
+      <id>8</id>
+      <name>shake128_absorb</name>
+      <address>0x0000cdc4</address>
+      <call>
+        <stack>20</stack>
+        <callee>78</callee>
+      </call>
+      <call>
+        <stack>24</stack>
+        <callee>6</callee>
+      </call>
+      <call>
+        <stack>16</stack>
+        <callee>40</callee>
       </call>
     </function>
     <function>
       <id>9</id>
-      <name>keccak_squeezeblocks</name>
-      <localIn>5</localIn>
-      <address>0x0000d414</address>
-      <stack>44</stack>
-      <callee>5</callee>
+      <name>shake128_squeezeblocks</name>
+      <address>0x0000cdfa</address>
+      <call>
+        <stack>8</stack>
+        <callee>7</callee>
+      </call>
     </function>
     <function>
       <id>10</id>
-      <name>shake128_absorb</name>
-      <address>0x0000c718</address>
+      <name>shake128_ctx_release</name>
+      <address>0x0000ce0c</address>
+      <stack>4</stack>
       <call>
-        <stack>20</stack>
-        <callee>71</callee>
-      </call>
-      <call>
-        <stack>24</stack>
-        <callee>8</callee>
-      </call>
-      <call>
-        <stack>16</stack>
-        <callee>56</callee>
+        <stack>0</stack>
+        <callee>76</callee>
       </call>
     </function>
     <function>
       <id>11</id>
-      <name>shake128_squeezeblocks</name>
-      <address>0x0000c74e</address>
+      <name>shake256</name>
+      <address>0x0000ce1c</address>
       <call>
-        <stack>8</stack>
-        <callee>9</callee>
+        <stack>160</stack>
+        <callee>40</callee>
+      </call>
+      <call>
+        <stack>164</stack>
+        <callee>78</callee>
+      </call>
+      <call>
+        <stack>168</stack>
+        <callee>6</callee>
+      </call>
+      <call>
+        <stack>172</stack>
+        <callee>7</callee>
+      </call>
+      <call>
+        <stack>168</stack>
+        <callee>7</callee>
+      </call>
+      <call>
+        <stack>164</stack>
+        <callee>76</callee>
       </call>
     </function>
     <function>
       <id>12</id>
-      <name>shake128_ctx_release</name>
-      <address>0x0000c760</address>
-      <stack>4</stack>
+      <name>sha3_256</name>
+      <address>0x0000cee2</address>
       <call>
-        <stack>0</stack>
-        <callee>69</callee>
+        <stack>352</stack>
+        <callee>6</callee>
+      </call>
+      <call>
+        <stack>356</stack>
+        <callee>7</callee>
       </call>
     </function>
     <function>
       <id>13</id>
-      <name>shake256</name>
-      <address>0x0000c770</address>
+      <name>sha3_512</name>
+      <address>0x0000cf42</address>
       <call>
-        <stack>160</stack>
-        <callee>56</callee>
+        <stack>288</stack>
+        <callee>6</callee>
       </call>
       <call>
-        <stack>164</stack>
-        <callee>71</callee>
-      </call>
-      <call>
-        <stack>168</stack>
-        <callee>8</callee>
-      </call>
-      <call>
-        <stack>172</stack>
-        <callee>9</callee>
-      </call>
-      <call>
-        <stack>168</stack>
-        <callee>9</callee>
-      </call>
-      <call>
-        <stack>164</stack>
-        <callee>69</callee>
+        <stack>292</stack>
+        <callee>7</callee>
       </call>
     </function>
     <function>
       <id>14</id>
-      <name>sha3_256</name>
-      <address>0x0000c836</address>
+      <name>PQCLEAN_KYBER512_CLEAN_gen_matrix</name>
+      <address>0x0000cfa2</address>
+      <stack>216</stack>
       <call>
-        <stack>352</stack>
-        <callee>8</callee>
-      </call>
-      <call>
-        <stack>356</stack>
+        <stack>214</stack>
         <callee>9</callee>
+        <callee>10</callee>
+        <callee>30</callee>
       </call>
     </function>
     <function>
       <id>15</id>
-      <name>sha3_512</name>
-      <address>0x0000c896</address>
-      <call>
-        <stack>288</stack>
-        <callee>8</callee>
-      </call>
-      <call>
-        <stack>292</stack>
-        <callee>9</callee>
-      </call>
+      <name>PQCLEAN_KYBER512_CLEAN_indcpa_keypair</name>
+      <address>0x0000d83a</address>
+      <stack>5222</stack>
+      <callee>13</callee>
+      <callee>14</callee>
+      <callee>19</callee>
+      <callee>22</callee>
+      <callee>25</callee>
+      <callee>26</callee>
+      <callee>27</callee>
+      <callee>28</callee>
+      <callee>29</callee>
     </function>
     <function>
       <id>16</id>
-      <name>PQCLEAN_KYBER512_CLEAN_gen_matrix</name>
-      <address>0x0000c8f6</address>
-      <stack>216</stack>
-      <call>
-        <stack>214</stack>
-        <callee>11</callee>
-        <callee>12</callee>
-        <callee>48</callee>
-      </call>
+      <name>PQCLEAN_KYBER512_CLEAN_crypto_kem_keypair</name>
+      <address>0x0000de6c</address>
+      <stack>12</stack>
+      <callee>12</callee>
+      <callee>15</callee>
     </function>
     <function>
       <id>17</id>
-      <name>PQCLEAN_KYBER512_CLEAN_indcpa_keypair</name>
-      <address>0x0000cec4</address>
-      <stack>5222</stack>
-      <callee>15</callee>
-      <callee>16</callee>
-      <callee>30</callee>
-      <callee>35</callee>
-      <callee>41</callee>
-      <callee>43</callee>
-      <callee>45</callee>
-      <callee>46</callee>
-      <callee>47</callee>
+      <name>main</name>
+      <address>0x0000dd80</address>
+      <call>
+        <stack>2444</stack>
+        <callee>16</callee>
+        <callee>55</callee>
+      </call>
+      <call>
+        <stack>2448</stack>
+        <callee>60</callee>
+      </call>
     </function>
     <function>
       <id>18</id>
-      <name>PQCLEAN_KYBER512_CLEAN_indcpa_enc</name>
-      <address>0x0000cd8c</address>
-      <stack>7740</stack>
-      <callee>16</callee>
-      <callee>24</callee>
-      <callee>28</callee>
-      <callee>30</callee>
-      <callee>31</callee>
-      <callee>33</callee>
-      <callee>36</callee>
-      <callee>37</callee>
-      <callee>39</callee>
-      <callee>42</callee>
-      <callee>43</callee>
-      <callee>44</callee>
-      <callee>45</callee>
-      <callee>46</callee>
-      <callee>47</callee>
+      <name>PQCLEAN_KYBER512_CLEAN_poly_tobytes</name>
+      <address>0x0000e038</address>
+      <stack>12</stack>
     </function>
     <function>
       <id>19</id>
-      <name>PQCLEAN_KYBER512_CLEAN_indcpa_dec</name>
-      <address>0x0000d6ca</address>
-      <stack>3092</stack>
-      <callee>25</callee>
-      <callee>29</callee>
-      <callee>33</callee>
-      <callee>36</callee>
-      <callee>38</callee>
-      <callee>40</callee>
-      <callee>42</callee>
-      <callee>43</callee>
-      <callee>45</callee>
+      <name>PQCLEAN_KYBER512_CLEAN_poly_getnoise_eta1</name>
+      <address>0x0000e2ac</address>
+      <stack>200</stack>
+      <callee>5</callee>
+      <callee>31</callee>
     </function>
     <function>
       <id>20</id>
-      <name>PQCLEAN_KYBER512_CLEAN_crypto_kem_keypair</name>
-      <address>0x0000d7ae</address>
-      <stack>12</stack>
-      <callee>14</callee>
-      <callee>17</callee>
+      <name>PQCLEAN_KYBER512_CLEAN_poly_ntt</name>
+      <address>0x0000e4ce</address>
+      <stack>8</stack>
+      <callee>1</callee>
+      <callee>3</callee>
     </function>
     <function>
       <id>21</id>
-      <name>PQCLEAN_KYBER512_CLEAN_crypto_kem_enc</name>
-      <address>0x0000d36c</address>
-      <stack>156</stack>
-      <callee>13</callee>
-      <callee>14</callee>
-      <callee>15</callee>
-      <callee>18</callee>
-      <callee>66</callee>
-    </function>
-    <function>
-      <id>22</id>
-      <name>PQCLEAN_KYBER512_CLEAN_crypto_kem_dec</name>
-      <address>0x0000d2c2</address>
-      <stack>932</stack>
-      <callee>13</callee>
-      <callee>14</callee>
-      <callee>15</callee>
-      <callee>18</callee>
-      <callee>19</callee>
-      <callee>50</callee>
-      <callee>51</callee>
-    </function>
-    <function>
-      <id>23</id>
-      <name>main</name>
-      <address>0x0000d5e4</address>
-      <stack>3276</stack>
-      <callee>20</callee>
-      <callee>21</callee>
-      <callee>22</callee>
-      <callee>66</callee>
-    </function>
-    <function>
-      <id>24</id>
-      <name>PQCLEAN_KYBER512_CLEAN_poly_compress</name>
-      <address>0x0000cfcc</address>
-      <stack>30</stack>
-      <call>
-        <stack>28</stack>
-        <callee>57</callee>
-      </call>
-    </function>
-    <function>
-      <id>25</id>
-      <name>PQCLEAN_KYBER512_CLEAN_poly_decompress</name>
-      <address>0x0000dab0</address>
-      <stack>12</stack>
-    </function>
-    <function>
-      <id>26</id>
-      <name>PQCLEAN_KYBER512_CLEAN_poly_tobytes</name>
-      <address>0x0000da66</address>
-      <stack>12</stack>
-    </function>
-    <function>
-      <id>27</id>
-      <name>PQCLEAN_KYBER512_CLEAN_poly_frombytes</name>
-      <address>0x0000d948</address>
-      <stack>8</stack>
-    </function>
-    <function>
-      <id>28</id>
-      <name>PQCLEAN_KYBER512_CLEAN_poly_frommsg</name>
-      <address>0x0000d0a4</address>
-      <stack>12</stack>
-    </function>
-    <function>
-      <id>29</id>
-      <name>PQCLEAN_KYBER512_CLEAN_poly_tomsg</name>
-      <address>0x0000d73c</address>
-      <stack>14</stack>
-      <call>
-        <stack>12</stack>
-        <callee>57</callee>
-      </call>
-    </function>
-    <function>
-      <id>30</id>
-      <name>PQCLEAN_KYBER512_CLEAN_poly_getnoise_eta1</name>
-      <address>0x0000dbba</address>
-      <stack>200</stack>
-      <callee>6</callee>
-      <callee>49</callee>
-    </function>
-    <function>
-      <id>31</id>
-      <name>PQCLEAN_KYBER512_CLEAN_poly_getnoise_eta2</name>
-      <address>0x0000dbe0</address>
-      <stack>136</stack>
-      <callee>7</callee>
-      <callee>49</callee>
-    </function>
-    <function>
-      <id>32</id>
-      <name>PQCLEAN_KYBER512_CLEAN_poly_ntt</name>
-      <address>0x0000dcc8</address>
-      <stack>8</stack>
-      <callee>2</callee>
-      <callee>4</callee>
-    </function>
-    <function>
-      <id>33</id>
-      <name>PQCLEAN_KYBER512_CLEAN_poly_invntt_tomont</name>
-      <address>0x0000dd16</address>
-      <stack>4</stack>
-      <call>
-        <stack>0</stack>
-        <callee>1</callee>
-      </call>
-    </function>
-    <function>
-      <id>34</id>
       <name>PQCLEAN_KYBER512_CLEAN_poly_basemul_montgomery</name>
-      <address>0x0000dcfa</address>
+      <address>0x0000e5e0</address>
       <stack>4</stack>
       <call>
         <stack>0</stack>
@@ -381,9 +262,19 @@
       </call>
     </function>
     <function>
-      <id>35</id>
+      <id>22</id>
       <name>PQCLEAN_KYBER512_CLEAN_poly_tomont</name>
-      <address>0x0000dd1a</address>
+      <address>0x0000e5ec</address>
+      <stack>4</stack>
+      <call>
+        <stack>0</stack>
+        <callee>2</callee>
+      </call>
+    </function>
+    <function>
+      <id>23</id>
+      <name>PQCLEAN_KYBER512_CLEAN_poly_reduce</name>
+      <address>0x0000e5f4</address>
       <stack>4</stack>
       <call>
         <stack>0</stack>
@@ -391,293 +282,506 @@
       </call>
     </function>
     <function>
-      <id>36</id>
-      <name>PQCLEAN_KYBER512_CLEAN_poly_reduce</name>
-      <address>0x0000dd0a</address>
-      <stack>4</stack>
-      <call>
-        <stack>0</stack>
-        <callee>4</callee>
-      </call>
-    </function>
-    <function>
-      <id>37</id>
+      <id>24</id>
       <name>PQCLEAN_KYBER512_CLEAN_poly_add</name>
-      <address>0x0000db62</address>
+      <address>0x0000e1c2</address>
       <stack>8</stack>
     </function>
     <function>
-      <id>38</id>
-      <name>PQCLEAN_KYBER512_CLEAN_poly_sub</name>
-      <address>0x0000db30</address>
-      <stack>8</stack>
-    </function>
-    <function>
-      <id>39</id>
-      <name>PQCLEAN_KYBER512_CLEAN_polyvec_compress</name>
-      <address>0x0000c4b4</address>
-      <stack>50</stack>
-    </function>
-    <function>
-      <id>40</id>
-      <name>PQCLEAN_KYBER512_CLEAN_polyvec_decompress</name>
-      <address>0x0000cc3a</address>
-      <stack>42</stack>
-    </function>
-    <function>
-      <id>41</id>
+      <id>25</id>
       <name>PQCLEAN_KYBER512_CLEAN_polyvec_tobytes</name>
-      <address>0x0000dc06</address>
+      <address>0x0000e3e0</address>
       <stack>12</stack>
-      <callee>26</callee>
+      <callee>18</callee>
     </function>
     <function>
-      <id>42</id>
-      <name>PQCLEAN_KYBER512_CLEAN_polyvec_frombytes</name>
-      <address>0x0000dc24</address>
-      <stack>12</stack>
-      <callee>27</callee>
-    </function>
-    <function>
-      <id>43</id>
+      <id>26</id>
       <name>PQCLEAN_KYBER512_CLEAN_polyvec_ntt</name>
-      <address>0x0000dc60</address>
+      <address>0x0000e464</address>
       <stack>8</stack>
+      <callee>20</callee>
+    </function>
+    <function>
+      <id>27</id>
+      <name>PQCLEAN_KYBER512_CLEAN_polyvec_basemul_acc_montgomery</name>
+      <address>0x0000e188</address>
+      <stack>532</stack>
+      <callee>21</callee>
+      <callee>23</callee>
+      <callee>24</callee>
+    </function>
+    <function>
+      <id>28</id>
+      <name>PQCLEAN_KYBER512_CLEAN_polyvec_reduce</name>
+      <address>0x0000e47a</address>
+      <stack>8</stack>
+      <callee>23</callee>
+    </function>
+    <function>
+      <id>29</id>
+      <name>PQCLEAN_KYBER512_CLEAN_polyvec_add</name>
+      <address>0x0000e2f8</address>
+      <stack>20</stack>
+      <callee>24</callee>
+    </function>
+    <function>
+      <id>30</id>
+      <name>PQCLEAN_KYBER512_CLEAN_kyber_shake128_absorb</name>
+      <address>0x0000df3a</address>
+      <stack>54</stack>
+      <callee>8</callee>
+      <callee>54</callee>
+    </function>
+    <function>
+      <id>31</id>
+      <name>PQCLEAN_KYBER512_CLEAN_kyber_shake256_prf</name>
+      <address>0x0000df6c</address>
+      <stack>54</stack>
+      <callee>11</callee>
+      <callee>54</callee>
+    </function>
+    <function>
+      <id>32</id>
+      <name>__DebugBreak</name>
+      <address>0x0000e5f8</address>
+      <stack>4</stack>
+    </function>
+    <function>
+      <id>33</id>
+      <name>__dwrite</name>
+      <address>0x0000e342</address>
+      <stack>12</stack>
       <callee>32</callee>
     </function>
     <function>
-      <id>44</id>
-      <name>PQCLEAN_KYBER512_CLEAN_polyvec_invntt_tomont</name>
-      <address>0x0000dc8c</address>
-      <stack>8</stack>
-      <callee>33</callee>
-    </function>
-    <function>
-      <id>45</id>
-      <name>PQCLEAN_KYBER512_CLEAN_polyvec_basemul_acc_montgomery</name>
-      <address>0x0000daf6</address>
-      <stack>532</stack>
-      <callee>34</callee>
-      <callee>36</callee>
-      <callee>37</callee>
-    </function>
-    <function>
-      <id>46</id>
-      <name>PQCLEAN_KYBER512_CLEAN_polyvec_reduce</name>
-      <address>0x0000dc76</address>
-      <stack>8</stack>
-      <callee>36</callee>
-    </function>
-    <function>
-      <id>47</id>
-      <name>PQCLEAN_KYBER512_CLEAN_polyvec_add</name>
-      <address>0x0000db94</address>
-      <stack>20</stack>
-      <callee>37</callee>
-    </function>
-    <function>
-      <id>48</id>
-      <name>PQCLEAN_KYBER512_CLEAN_kyber_shake128_absorb</name>
-      <address>0x0000d9a8</address>
-      <stack>54</stack>
-      <callee>10</callee>
-      <callee>65</callee>
-    </function>
-    <function>
-      <id>49</id>
-      <name>PQCLEAN_KYBER512_CLEAN_kyber_shake256_prf</name>
-      <address>0x0000d9da</address>
-      <stack>54</stack>
-      <callee>13</callee>
-      <callee>65</callee>
-    </function>
-    <function>
-      <id>50</id>
-      <name>PQCLEAN_KYBER512_CLEAN_verify</name>
-      <address>0x0000d818</address>
-      <stack>20</stack>
-    </function>
-    <function>
-      <id>51</id>
-      <name>PQCLEAN_KYBER512_CLEAN_cmov</name>
-      <address>0x0000d8e6</address>
-      <stack>20</stack>
-    </function>
-    <function>
-      <id>52</id>
-      <name>__DebugBreak</name>
-      <address>0x0000dd1e</address>
-      <stack>4</stack>
-    </function>
-    <function>
-      <id>53</id>
+      <id>34</id>
       <name>__exit</name>
-      <address>0x0000dca2</address>
+      <address>0x0000e4a6</address>
       <stack>6</stack>
-      <callee>52</callee>
+      <callee>32</callee>
     </function>
     <function>
-      <id>54</id>
-      <name>_exit</name>
-      <address>0x0000dd0e</address>
-      <stack>4</stack>
-      <callee>53</callee>
-    </function>
-    <function>
-      <id>55</id>
-      <name>__program_start</name>
-      <root>Program entry</root>
-      <address>0x0000c1c0</address>
-      <stack>0</stack>
-      <callee>23</callee>
-      <callee>56</callee>
-      <callee>67</callee>
-    </function>
-    <function>
-      <id>56</id>
-      <name>exit</name>
-      <address>0x0000dd12</address>
+      <id>35</id>
+      <name>__write</name>
+      <address>0x0000e59c</address>
       <stack>4</stack>
       <call>
         <stack>0</stack>
-        <callee>54</callee>
+        <callee>33</callee>
       </call>
     </function>
     <function>
-      <id>57</id>
-      <name>?ShiftRight16s_3</name>
+      <id>36</id>
+      <name>_exit</name>
+      <address>0x0000e5f0</address>
+      <stack>4</stack>
+      <callee>34</callee>
+    </function>
+    <function>
+      <id>37</id>
+      <name>__program_start</name>
+      <root>Program entry</root>
+      <address>0x0000c1e2</address>
+      <stack>0</stack>
+      <callee>17</callee>
+      <callee>40</callee>
+      <callee>56</callee>
+    </function>
+    <function>
+      <id>38</id>
+      <name>_Div64u</name>
+      <address>0x0000db50</address>
+      <stack>36</stack>
+    </function>
+    <function>
+      <id>39</id>
+      <name>div</name>
+      <address>0x0000e490</address>
+      <stack>8</stack>
+      <callee>50</callee>
+    </function>
+    <function>
+      <id>40</id>
+      <name>exit</name>
+      <address>0x0000e5e8</address>
+      <stack>4</stack>
+      <call>
+        <stack>0</stack>
+        <callee>36</callee>
+      </call>
+    </function>
+    <function>
+      <id>41</id>
+      <name>?Mul32fHw32</name>
+      <address>0x0000d724</address>
+      <stack>14</stack>
+    </function>
+    <function>
+      <id>42</id>
+      <name>_Cast32uto32f</name>
       <address>0x0000dd02</address>
+      <stack>12</stack>
+    </function>
+    <function>
+      <id>43</id>
+      <name>_Cast32fto32u</name>
+      <address>0x0000e590</address>
+      <stack>4</stack>
+      <callee>44</callee>
+    </function>
+    <function>
+      <id>44</id>
+      <name>?FLT_Extract</name>
+      <address>0x0000dfec</address>
+      <stack>12</stack>
+    </function>
+    <function>
+      <id>45</id>
+      <name>?FLT_LT</name>
+      <address>0x0000df9a</address>
+      <stack>8</stack>
+    </function>
+    <function>
+      <id>46</id>
+      <name>_Div32f</name>
+      <address>0x0000d5f4</address>
+      <stack>20</stack>
+    </function>
+    <function>
+      <id>47</id>
+      <name>_Sub32f</name>
+      <address>0x0000d490</address>
+      <stack>0</stack>
+      <callee>48</callee>
+    </function>
+    <function>
+      <id>48</id>
+      <name>_Add32f</name>
+      <address>0x0000d494</address>
+      <stack>20</stack>
+    </function>
+    <function>
+      <id>49</id>
+      <name>?DivMod16u</name>
+      <address>0x0000e44c</address>
       <stack>4</stack>
     </function>
     <function>
-      <id>58</id>
-      <name>?ShiftRight32u</name>
-      <address>0x0000da08</address>
+      <id>50</id>
+      <name>?DivMod16s</name>
+      <address>0x0000e254</address>
+      <stack>8</stack>
+      <callee>49</callee>
+    </function>
+    <function>
+      <id>51</id>
+      <name>?DivMod32u</name>
+      <address>0x0000e1f4</address>
+      <stack>16</stack>
+    </function>
+    <function>
+      <id>52</id>
+      <name>?DivMod32s</name>
+      <address>0x0000e10a</address>
+      <stack>8</stack>
+      <callee>51</callee>
+    </function>
+    <function>
+      <id>53</id>
+      <name>__iar_Memchr</name>
+      <address>0x0000e4ba</address>
+      <stack>4</stack>
+    </function>
+    <function>
+      <id>54</id>
+      <name>memcpy</name>
+      <address>0x0000e504</address>
+      <stack>4</stack>
+    </function>
+    <function>
+      <id>55</id>
+      <name>?ClearMemoryWords</name>
+      <address>0x0000e528</address>
+      <stack>8</stack>
+    </function>
+    <function>
+      <id>56</id>
+      <name>__data16_memzero</name>
+      <address>0x0000e548</address>
+      <stack>4</stack>
+    </function>
+    <function>
+      <id>57</id>
+      <name>?Mul8Hw</name>
+      <address>0x0000e366</address>
       <stack>0</stack>
-      <callee>59</callee>
+      <callee>58</callee>
+    </function>
+    <function>
+      <id>58</id>
+      <name>?Mul16Hw</name>
+      <address>0x0000e36a</address>
+      <stack>6</stack>
     </function>
     <function>
       <id>59</id>
-      <name>?ShiftRight32u_7</name>
-      <address>0x0000da48</address>
-      <stack>0</stack>
-      <callee>60</callee>
+      <name>?Mul16to32sHw</name>
+      <address>0x0000e3fe</address>
+      <stack>6</stack>
     </function>
     <function>
       <id>60</id>
-      <name>?ShiftRight32u_6</name>
-      <address>0x0000da4c</address>
-      <stack>0</stack>
-      <callee>61</callee>
+      <name>printf</name>
+      <address>0x0000e3a4</address>
+      <stack>6</stack>
+      <call>
+        <callee>71</callee>
+        <arg>
+          <index>0</index>
+          <function>75</function>
+        </arg>
+      </call>
     </function>
     <function>
       <id>61</id>
-      <name>?ShiftRight32u_5</name>
-      <address>0x0000da50</address>
-      <stack>0</stack>
-      <callee>62</callee>
+      <name>putchar</name>
+      <address>0x0000e284</address>
+      <stack>10</stack>
+      <callee>35</callee>
     </function>
     <function>
       <id>62</id>
-      <name>?ShiftRight32u_4</name>
-      <address>0x0000da54</address>
-      <stack>0</stack>
-      <callee>63</callee>
+      <name>__iar_Strchr</name>
+      <address>0x0000e566</address>
+      <stack>4</stack>
     </function>
     <function>
       <id>63</id>
-      <name>?ShiftRight32u_3</name>
-      <address>0x0000da58</address>
-      <stack>0</stack>
-      <callee>64</callee>
+      <name>strlen</name>
+      <address>0x0000e4e0</address>
+      <stack>4</stack>
     </function>
     <function>
       <id>64</id>
-      <name>?ShiftRight32u_2</name>
-      <address>0x0000da5c</address>
+      <name>__iar_Dunscale</name>
+      <address>0x0000e082</address>
       <stack>4</stack>
     </function>
     <function>
       <id>65</id>
-      <name>memcpy</name>
-      <address>0x0000dcb6</address>
+      <name>__data16_GetMemChunk</name>
+      <address>0x0000e386</address>
       <stack>4</stack>
     </function>
     <function>
       <id>66</id>
-      <name>?ClearMemoryWords</name>
-      <address>0x0000dcda</address>
+      <name>LoadInt</name>
+      <localIn>6</localIn>
+      <address>0x0000dbf2</address>
       <stack>8</stack>
     </function>
     <function>
       <id>67</id>
-      <name>__data16_memzero</name>
-      <address>0x0000dcea</address>
-      <stack>4</stack>
+      <name>_GenldLarge</name>
+      <localIn>6</localIn>
+      <address>0x0000cba2</address>
+      <stack>52</stack>
+      <call>
+        <stack>44</stack>
+        <callee>39</callee>
+        <callee>54</callee>
+        <callee>54</callee>
+      </call>
+      <call>
+        <stack>48</stack>
+        <callee>54</callee>
+      </call>
     </function>
     <function>
       <id>68</id>
-      <name>__data16_GetMemChunk</name>
-      <address>0x0000dc42</address>
-      <stack>4</stack>
+      <name>scale</name>
+      <localIn>6</localIn>
+      <address>0x0000e0c8</address>
+      <stack>24</stack>
+      <callee>41</callee>
     </function>
     <function>
       <id>69</id>
-      <name>__data16_free</name>
-      <address>0x0000d55e</address>
-      <stack>4</stack>
+      <name>_LdtobLarge</name>
+      <localIn>6</localIn>
+      <address>0x0000c964</address>
+      <call>
+        <stack>82</stack>
+        <callee>41</callee>
+        <callee>42</callee>
+        <callee>43</callee>
+        <callee>45</callee>
+        <callee>46</callee>
+        <callee>47</callee>
+        <callee>51</callee>
+        <callee>52</callee>
+        <callee>54</callee>
+        <callee>59</callee>
+        <callee>64</callee>
+        <callee>68</callee>
+      </call>
+      <call>
+        <stack>84</stack>
+        <callee>67</callee>
+      </call>
     </function>
     <function>
       <id>70</id>
-      <name>__data16_findmem</name>
+      <name>_LitobLarge</name>
       <localIn>6</localIn>
-      <address>0x0000d882</address>
-      <stack>8</stack>
-      <callee>68</callee>
-      <callee>69</callee>
+      <address>0x0000d164</address>
+      <stack>56</stack>
+      <call>
+        <stack>52</stack>
+        <callee>38</callee>
+        <callee>57</callee>
+      </call>
     </function>
     <function>
       <id>71</id>
-      <name>__data16_malloc</name>
-      <address>0x0000d658</address>
+      <name>_PrintfLarge</name>
+      <address>0x0000c1fa</address>
+      <call>
+        <stack>128</stack>
+        <callee>73</callee>
+        <arg>
+          <index>0</index>
+          <paramIndex>0</paramIndex>
+        </arg>
+      </call>
+      <call>
+        <stack>128</stack>
+        <callee>53</callee>
+        <callee>62</callee>
+        <callee>63</callee>
+        <callee>66</callee>
+        <callee>69</callee>
+        <callee>70</callee>
+      </call>
+      <call>
+        <stack>132</stack>
+        <callee>74</callee>
+        <arg>
+          <index>0</index>
+          <paramIndex>0</paramIndex>
+        </arg>
+      </call>
+      <call>
+        <stack>132</stack>
+        <callee>72</callee>
+        <arg>
+          <index>0</index>
+          <paramIndex>0</paramIndex>
+        </arg>
+      </call>
+    </function>
+    <function>
+      <id>72</id>
+      <name>pad</name>
+      <localIn>6</localIn>
+      <address>0x0000e224</address>
+      <stack>22</stack>
+      <call>
+        <callee>74</callee>
+        <arg>
+          <index>0</index>
+          <paramIndex>0</paramIndex>
+        </arg>
+      </call>
+    </function>
+    <function>
+      <id>73</id>
+      <name>_PutcharLarge</name>
+      <localIn>6</localIn>
+      <address>0x0000e31e</address>
       <stack>8</stack>
-      <callee>70</callee>
+      <indirect>
+        <viaParam>0</viaParam>
+      </indirect>
+    </function>
+    <function>
+      <id>74</id>
+      <name>_PutcharsLarge</name>
+      <localIn>6</localIn>
+      <address>0x0000e2d2</address>
+      <stack>20</stack>
+      <call>
+        <callee>73</callee>
+        <arg>
+          <index>0</index>
+          <paramIndex>0</paramIndex>
+        </arg>
+      </call>
+    </function>
+    <function>
+      <id>75</id>
+      <name>_Prout</name>
+      <address>0x0000e434</address>
+      <stack>12</stack>
+      <callee>61</callee>
+    </function>
+    <function>
+      <id>76</id>
+      <name>__data16_free</name>
+      <address>0x0000dc7c</address>
+      <stack>4</stack>
+    </function>
+    <function>
+      <id>77</id>
+      <name>__data16_findmem</name>
+      <localIn>7</localIn>
+      <address>0x0000ded6</address>
+      <stack>8</stack>
+      <callee>65</callee>
+      <callee>76</callee>
+    </function>
+    <function>
+      <id>78</id>
+      <name>__data16_malloc</name>
+      <address>0x0000ddfa</address>
+      <stack>8</stack>
+      <callee>77</callee>
     </function>
   </functions>
   <maxCallChains>
     <maxCallChain>
-      <top>55</top>
-      <stack>12666</stack>
+      <top>37</top>
+      <stack>8396</stack>
       <entry>
-        <function>55</function>
+        <function>37</function>
         <stack>0</stack>
       </entry>
       <entry>
-        <function>23</function>
-        <stack>3276</stack>
+        <function>17</function>
+        <stack>2444</stack>
       </entry>
       <entry>
-        <function>22</function>
-        <stack>932</stack>
+        <function>16</function>
+        <stack>12</stack>
       </entry>
       <entry>
-        <function>18</function>
-        <stack>7740</stack>
+        <function>15</function>
+        <stack>5222</stack>
       </entry>
       <entry>
-        <function>30</function>
+        <function>19</function>
         <stack>200</stack>
       </entry>
       <entry>
-        <function>49</function>
+        <function>31</function>
         <stack>54</stack>
       </entry>
       <entry>
-        <function>13</function>
+        <function>11</function>
         <stack>168</stack>
       </entry>
       <entry>
-        <function>8</function>
+        <function>6</function>
         <stack>296</stack>
       </entry>
     </maxCallChain>

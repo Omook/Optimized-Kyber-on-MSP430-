@@ -236,7 +236,7 @@ void PQCLEAN_KYBER512_CLEAN_poly_basemul_montgomery(poly *r, const poly *a, cons
     asm_poly_basemul_kara(&r->coeffs[0], &a->coeffs[0], &b->coeffs[0], &PQCLEAN_KYBER512_CLEAN_zetas[64]);
 }
 
-/*************************************************
+/***********************************************
 * Name:        PQCLEAN_KYBER512_CLEAN_poly_tomont
 *
 * Description: Inplace conversion of all coefficients of a polynomial

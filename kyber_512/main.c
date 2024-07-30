@@ -10,7 +10,7 @@
 #include "symmetric.h"
 #include <stddef.h>
 #include <stdint.h>
-
+#include <stdio.h>
 
 
 
@@ -31,11 +31,27 @@ int main( void )
   uint8_t ss2[PQCLEAN_KYBER512_CLEAN_CRYPTO_BYTES];
         
   PQCLEAN_KYBER512_CLEAN_crypto_kem_keypair(pk, sk); //Alice: gen(pk, sk)                          
-  PQCLEAN_KYBER512_CLEAN_crypto_kem_enc(ct, ss, pk); //Alice->Bob:pk, Bob: gen(pk->(ss,ct))           
-  PQCLEAN_KYBER512_CLEAN_crypto_kem_dec(ss2, ct, sk);//Bob->Alice:ct, Alice: gen(ct->(ss2))             
   
-  
-  PQCLEAN_KYBER512_CLEAN_crypto_kem_enc(ct, ss, pk);
+  for(int i=0;i<PQCLEAN_KYBER512_CLEAN_CRYPTO_PUBLICKEYBYTES;i++){
+          printf("%d : %d\n", i, pk[i]);
+        }
+        for(int i=0;i<PQCLEAN_KYBER512_CLEAN_CRYPTO_SECRETKEYBYTES;i++){
+          printf("%d : %d\n", i, sk[i]);
+        }
+//  PQCLEAN_KYBER512_CLEAN_crypto_kem_enc(ct, ss, pk); //Alice->Bob:pk, Bob: gen(pk->(ss,ct))           
+//  PQCLEAN_KYBER512_CLEAN_crypto_kem_dec(ss2, ct, sk);//Bob->Alice:ct, Alice: gen(ct->(ss2))             
+//  
+//  printf("\nSS : ");
+//  for (int i = 0; i < 32; i++) {
+//	printf("%02X ", ss[i]);
+//  }
+//
+//  printf("\nSS2 : ");
+//  for (int i = 0; i < 32; i++) {
+//	printf("%02X ", ss2[i]);
+//  }
+//  
+//  PQCLEAN_KYBER512_CLEAN_crypto_kem_enc(ct, ss, pk);
   
   return 0;
 }

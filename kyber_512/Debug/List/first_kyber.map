@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR UBROF Linker V10.15.2.1487                          12/Jan/2024  21:39:10
+# IAR UBROF Linker V10.15.2.1487                          19/Jul/2024  16:22:13
 # Copyright 1987-2023 IAR Systems AB.
 #
 #    Target Cpu    =  MSP430
@@ -84,7 +84,7 @@
 
   ADDRESS  SPACE  TYPE         MODULE
   -------  -----  ----         ------
-   0xC1C0         Relocatable  ?cstart
+   0xC1E2         Relocatable  ?cstart
 
 
 
@@ -146,123 +146,115 @@ __data16_Aldata                            0x1C02  Pub   Data  ?xxmemxmalloc [2]
 _STACK_SIZE                                0x3E80  Pub         ?ABS_ENTRY_MOD [1]
 KeccakF_RoundConstants                     0xC000  Pub   Data  fips202
 PQCLEAN_KYBER512_CLEAN_zetas               0xC0C0  Pub   Data  ntt
-__program_start                            0xC1C0  Pub         ?cstart [2]
-?cstart_begin                              0xC1C0  Pub         ?cstart [2]
-?cstart_init_zero                          0xC1C4  Pub         ?cstart [2]
-?cstart_call_main                          0xC1D0  Pub         ?cstart [2]
-keccak_absorb                              0xC1D8  Loc   Code  fips202
-?cstart_end                                0xC1D8  Pub         ?cstart [2]
-PQCLEAN_KYBER512_CLEAN_polyvec_compress
-                                           0xC4B4  Pub   Code  polyvec
-shake128_absorb                            0xC718  Pub   Code  fips202
-?Subroutine3                               0xC73E  Loc         fips202
-shake128_squeezeblocks                     0xC74E  Pub   Code  fips202
-?Subroutine5                               0xC754  Loc         fips202
-shake128_ctx_release                       0xC760  Pub   Code  fips202
-?Subroutine7                               0xC762  Loc         fips202
-?Subroutine6                               0xC768  Loc         fips202
-shake256                                   0xC770  Pub   Code  fips202
-sha3_256                                   0xC836  Pub   Code  fips202
-sha3_512                                   0xC896  Pub   Code  fips202
+__program_start                            0xC1E2  Pub         ?cstart [2]
+?cstart_begin                              0xC1E2  Pub         ?cstart [2]
+?cstart_init_zero                          0xC1E6  Pub         ?cstart [2]
+?cstart_call_main                          0xC1F2  Pub         ?cstart [2]
+?cstart_end                                0xC1FA  Pub         ?cstart [2]
+_PrintfLarge                               0xC1FA  Pub   Code  ?xprintflarge [2]
+keccak_absorb                              0xC688  Loc   Code  fips202
+_LdtobLarge                                0xC964  Loc   Code  ?xprintflarge [2]
+_GenldLarge                                0xCBA2  Loc   Code  ?xprintflarge [2]
+shake128_absorb                            0xCDC4  Pub   Code  fips202
+?Subroutine3                               0xCDEA  Loc         fips202
+shake128_squeezeblocks                     0xCDFA  Pub   Code  fips202
+?Subroutine5                               0xCE00  Loc         fips202
+shake128_ctx_release                       0xCE0C  Pub   Code  fips202
+?Subroutine7                               0xCE0E  Loc         fips202
+?Subroutine6                               0xCE14  Loc         fips202
+shake256                                   0xCE1C  Pub   Code  fips202
+sha3_256                                   0xCEE2  Pub   Code  fips202
+sha3_512                                   0xCF42  Pub   Code  fips202
 PQCLEAN_KYBER512_CLEAN_gen_matrix
-                                           0xC8F6  Pub   Code  indcpa
-asm_poly_basemul_kara                      0xCAB8  Pub   Code  asm_basemul_kyber
-round1                                     0xCACE  Loc         asm_basemul_kyber
-round2                                     0xCB72  Loc         asm_basemul_kyber
-PQCLEAN_KYBER512_CLEAN_polyvec_decompress
-                                           0xCC3A  Pub   Code  polyvec
-PQCLEAN_KYBER512_CLEAN_indcpa_enc
-                                           0xCD8C  Pub   Code  indcpa
+                                           0xCFA2  Pub   Code  indcpa
+_LitobLarge                                0xD164  Loc   Code  ?xprintflarge [2]
+asm_poly_basemul_kara                      0xD30E  Pub   Code  asm_basemul_kyber
+round1                                     0xD324  Loc         asm_basemul_kyber
+round2                                     0xD3C8  Loc         asm_basemul_kyber
+_Sub32f                                    0xD490  Pub         _Add32f [2]
+_Add32f                                    0xD494  Pub         _Add32f [2]
+_Div32f                                    0xD5F4  Pub         _Div32f [2]
+?Mul32fHw32                                0xD724  Pub         ?Mul32fHw32 [2]
 PQCLEAN_KYBER512_CLEAN_indcpa_keypair
-                                           0xCEC4  Pub   Code  indcpa
-PQCLEAN_KYBER512_CLEAN_poly_compress
-                                           0xCFCC  Pub   Code  poly
-PQCLEAN_KYBER512_CLEAN_poly_frommsg
-                                           0xD0A4  Pub   Code  poly
+                                           0xD83A  Pub   Code  indcpa
 PQCLEAN_KYBER512_CLEAN_poly_cbd_eta1
-                                           0xD15C  Pub   Code  cbd
-asm_poly_tomont                            0xD210  Pub   Code  asm_reduce_kyber
-loop_mont                                  0xD232  Loc         asm_reduce_kyber
-asm_poly_barrett                           0xD274  Pub   Code  asm_reduce_kyber
-loop_barrett                               0xD292  Loc         asm_reduce_kyber
-PQCLEAN_KYBER512_CLEAN_crypto_kem_dec
-                                           0xD2C2  Pub   Code  kem
-PQCLEAN_KYBER512_CLEAN_crypto_kem_enc
-                                           0xD36C  Pub   Code  kem
-keccak_squeezeblocks                       0xD414  Loc   Code  fips202
-PQCLEAN_KYBER512_CLEAN_poly_cbd_eta2
-                                           0xD4BC  Pub   Code  cbd
-__data16_free                              0xD55E  Pub   Code  ?xxmemxfree [2]
-main                                       0xD5E4  Pub   Code  main
-__data16_malloc                            0xD658  Pub   Code  ?xxmemxmalloc [2]
-PQCLEAN_KYBER512_CLEAN_indcpa_dec
-                                           0xD6CA  Pub   Code  indcpa
-PQCLEAN_KYBER512_CLEAN_poly_tomsg
-                                           0xD73C  Pub   Code  poly
+                                           0xD942  Pub   Code  cbd
+asm_poly_tomont                            0xD9F6  Pub   Code  asm_reduce_kyber
+loop_mont                                  0xDA18  Loc         asm_reduce_kyber
+asm_poly_barrett                           0xDA5A  Pub   Code  asm_reduce_kyber
+loop_barrett                               0xDA78  Loc         asm_reduce_kyber
+keccak_squeezeblocks                       0xDAA8  Loc   Code  fips202
+_Div64u                                    0xDB50  Pub   Code  ?div64i [2]
+LoadInt                                    0xDBF2  Loc   Code  ?xprintflarge [2]
+__data16_free                              0xDC7C  Pub   Code  ?xxmemxfree [2]
+_Cast32uto32f                              0xDD02  Pub         ?Cast32f32i [2]
+main                                       0xDD80  Pub   Code  main
+__data16_malloc                            0xDDFA  Pub   Code  ?xxmemxmalloc [2]
 PQCLEAN_KYBER512_CLEAN_crypto_kem_keypair
-                                           0xD7AE  Pub   Code  kem
-PQCLEAN_KYBER512_CLEAN_verify              0xD818  Pub   Code  verify
-__data16_findmem                           0xD882  Loc   Code  ?xxmemxmalloc [2]
-PQCLEAN_KYBER512_CLEAN_cmov                0xD8E6  Pub   Code  verify
-PQCLEAN_KYBER512_CLEAN_poly_frombytes
-                                           0xD948  Pub   Code  poly
+                                           0xDE6C  Pub   Code  kem
+__data16_findmem                           0xDED6  Loc   Code  ?xxmemxmalloc [2]
 PQCLEAN_KYBER512_CLEAN_kyber_shake128_absorb
-                                           0xD9A8  Pub   Code  symmetric-shake
-?Subroutine0                               0xD9D2  Loc         symmetric-shake
+                                           0xDF3A  Pub   Code  symmetric-shake
+?Subroutine0                               0xDF64  Loc         symmetric-shake
 PQCLEAN_KYBER512_CLEAN_kyber_shake256_prf
-                                           0xD9DA  Pub   Code  symmetric-shake
-?ShiftRight32u                             0xDA08  Pub         ?ShiftRight32u [2]
-?ShiftRight32u_7                           0xDA48  Pub         ?ShiftRight32u [2]
-?ShiftRight32u_6                           0xDA4C  Pub         ?ShiftRight32u [2]
-?ShiftRight32u_5                           0xDA50  Pub         ?ShiftRight32u [2]
-?ShiftRight32u_4                           0xDA54  Pub         ?ShiftRight32u [2]
-?ShiftRight32u_3                           0xDA58  Pub         ?ShiftRight32u [2]
-?ShiftRight32u_2                           0xDA5C  Pub         ?ShiftRight32u [2]
+                                           0xDF6C  Pub   Code  symmetric-shake
+?FLT_LT                                    0xDF9A  Pub         ?FLT_LT [2]
+?FLT_Extract                               0xDFEC  Pub         ?FLT_Extract [2]
 PQCLEAN_KYBER512_CLEAN_poly_tobytes
-                                           0xDA66  Pub   Code  poly
-PQCLEAN_KYBER512_CLEAN_poly_decompress
-                                           0xDAB0  Pub   Code  poly
+                                           0xE038  Pub   Code  poly
+__iar_Dunscale                             0xE082  Pub   Code  ?xdunscal [2]
+scale                                      0xE0C8  Loc   Code  ?xprintflarge [2]
+?DivMod32s                                 0xE10A  Pub         ?DivMod32s [2]
 PQCLEAN_KYBER512_CLEAN_polyvec_basemul_acc_montgomery
-                                           0xDAF6  Pub   Code  polyvec
-PQCLEAN_KYBER512_CLEAN_poly_sub
-                                           0xDB30  Pub   Code  poly
+                                           0xE188  Pub   Code  polyvec
 PQCLEAN_KYBER512_CLEAN_poly_add
-                                           0xDB62  Pub   Code  poly
-PQCLEAN_KYBER512_CLEAN_polyvec_add
-                                           0xDB94  Pub   Code  polyvec
+                                           0xE1C2  Pub   Code  poly
+?DivMod32u                                 0xE1F4  Pub         ?DivMod32u [2]
+pad                                        0xE224  Loc   Code  ?xprintflarge [2]
+?DivMod16s                                 0xE254  Pub         ?DivMod816s [2]
+putchar                                    0xE284  Pub   Code  ?putchar [2]
 PQCLEAN_KYBER512_CLEAN_poly_getnoise_eta1
-                                           0xDBBA  Pub   Code  poly
-PQCLEAN_KYBER512_CLEAN_poly_getnoise_eta2
-                                           0xDBE0  Pub   Code  poly
+                                           0xE2AC  Pub   Code  poly
+_PutcharsLarge                             0xE2D2  Loc   Code  ?xprintflarge [2]
+PQCLEAN_KYBER512_CLEAN_polyvec_add
+                                           0xE2F8  Pub   Code  polyvec
+_PutcharLarge                              0xE31E  Loc   Code  ?xprintflarge [2]
+__dwrite                                   0xE342  Pub   Code  ?__dwrite [2]
+?Mul8Hw                                    0xE366  Pub         ?Mul8Hw [2]
+?Mul16Hw                                   0xE36A  Pub         ?Mul8Hw [2]
+?Mul16to32uHw                              0xE36A  Pub         ?Mul8Hw [2]
+__data16_GetMemChunk                       0xE386  Pub   Code  ?xgetmemchunk [2]
+printf                                     0xE3A4  Pub   Code  ?printf [2]
 PQCLEAN_KYBER512_CLEAN_polyvec_tobytes
-                                           0xDC06  Pub   Code  polyvec
-PQCLEAN_KYBER512_CLEAN_polyvec_frombytes
-                                           0xDC24  Pub   Code  polyvec
-__data16_GetMemChunk                       0xDC42  Pub   Code  ?xgetmemchunk [2]
+                                           0xE3E0  Pub   Code  polyvec
+?Mul16to32sHw                              0xE3FE  Pub         ?Mul16to32sHw [2]
+_Prout                                     0xE434  Pub   Code  ?xprout [2]
+?DivMod16u                                 0xE44C  Pub         ?DivMod816u [2]
 PQCLEAN_KYBER512_CLEAN_polyvec_ntt
-                                           0xDC60  Pub   Code  polyvec
+                                           0xE464  Pub   Code  polyvec
 PQCLEAN_KYBER512_CLEAN_polyvec_reduce
-                                           0xDC76  Pub   Code  polyvec
-PQCLEAN_KYBER512_CLEAN_polyvec_invntt_tomont
-                                           0xDC8C  Pub   Code  polyvec
-__exit                                     0xDCA2  Pub   Code  ?__exit [2]
-memcpy                                     0xDCB6  Pub   Code  ?memcpy [2]
+                                           0xE47A  Pub   Code  polyvec
+div                                        0xE490  Pub   Code  ?div [2]
+__exit                                     0xE4A6  Pub   Code  ?__exit [2]
+__iar_Memchr                               0xE4BA  Pub   Code  ?memchr [2]
 PQCLEAN_KYBER512_CLEAN_poly_ntt
-                                           0xDCC8  Pub   Code  poly
-?ClearMemoryWords                          0xDCDA  Pub         ?ClearMemoryWords [2]
-__data16_memzero                           0xDCEA  Pub   Code  ?memzero [2]
+                                           0xE4CE  Pub   Code  poly
+strlen                                     0xE4E0  Pub   Code  ?strlen [2]
+memcpy                                     0xE504  Pub   Code  ?memcpy [2]
+?ClearMemoryWords                          0xE528  Pub         ?ClearMemoryWords [2]
+__data16_memzero                           0xE548  Pub   Code  ?memzero [2]
+__iar_Strchr                               0xE566  Pub   Code  ?strchr [2]
+_Cast32fto32u                              0xE590  Pub         _Cast32fto32u [2]
+__write                                    0xE59C  Pub   Code  ?__write [2]
 PQCLEAN_KYBER512_CLEAN_poly_basemul_montgomery
-                                           0xDCFA  Pub   Code  poly
-?ShiftRight16s_3                           0xDD02  Pub         ?ShiftRight16s_n [2]
-PQCLEAN_KYBER512_CLEAN_poly_reduce
-                                           0xDD0A  Pub   Code  poly
-_exit                                      0xDD0E  Pub   Code  ?_exit [2]
-exit                                       0xDD12  Pub   Code  ?exit [2]
-PQCLEAN_KYBER512_CLEAN_poly_invntt_tomont
-                                           0xDD16  Pub   Code  poly
+                                           0xE5E0  Pub   Code  poly
+exit                                       0xE5E8  Pub   Code  ?exit [2]
 PQCLEAN_KYBER512_CLEAN_poly_tomont
-                                           0xDD1A  Pub   Code  poly
-__DebugBreak                               0xDD1E  Pub   Code  ?__dbg_break [2]
+                                           0xE5EC  Pub   Code  poly
+_exit                                      0xE5F0  Pub   Code  ?_exit [2]
+PQCLEAN_KYBER512_CLEAN_poly_reduce
+                                           0xE5F4  Pub   Code  poly
+__DebugBreak                               0xE5F8  Pub   Code  ?__dbg_break [2]
 ?reset_vector                              0xFFFE  Pub         ?reset_vector [2]
 asm_keccak1600                         0x00010000  Pub   Code  asm_keccak1600 [0]
 loop                                   0x00010010  Loc         asm_keccak1600 [0]
@@ -306,10 +298,10 @@ File: C:\Users\dong\Desktop\MSP430 Code\first_kyber\Debug\Obj\asm_basemul_kyber.
   Module: asm_basemul_kyber
        Segment part 0, <CODE> 1 [root]
                       (was CODE)
-       Address:  0xCAB8 Size: 0x182 Align: 2(1)
-      asm_poly_basemul_kara  0xCAB8  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_poly_basemul_montgomery (poly)
-      round1                 0xCACE  Loc
-      round2                 0xCB72  Loc
+       Address:  0xD30E Size: 0x182 Align: 2(1)
+      asm_poly_basemul_kara  0xD30E  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_poly_basemul_montgomery (poly)
+      round1                 0xD324  Loc
+      round2                 0xD3C8  Loc
 
       Absolute module symbols:
         __MSP430FR5720__  0x0000  Loc
@@ -319,7 +311,7 @@ File: C:\Users\dong\Desktop\MSP430 Code\first_kyber\Debug\Obj\asm_INTT_Kyber.r43
        Segment part 0, <CODE> 2 [root]
                       (was CODE)
        Address:  0x0002B742 Size: 0xCF02 Align: 2(1)
-      asm_invntt_merging   0x0002B742  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_poly_invntt_tomont (poly)
+      asm_invntt_merging   0x0002B742  Pub
       layer7_merge3        0x0002B752  Loc
       layer5_merge2        0x0003349A  Loc
       layer3_merge2        0x000384B0  Loc
@@ -348,16 +340,16 @@ File: C:\Users\dong\Desktop\MSP430 Code\first_kyber\Debug\Obj\asm_reduce_kyber.r
   Module: asm_reduce_kyber
        Segment part 0, <CODE> 1 [root]
                       (was CODE)
-       Address:  0xD210 Size: 0x64 Align: 2(1)
-      asm_poly_tomont      0xD210  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_poly_tomont (poly)
-      loop_mont            0xD232  Loc
+       Address:  0xD9F6 Size: 0x64 Align: 2(1)
+      asm_poly_tomont      0xD9F6  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_poly_tomont (poly)
+      loop_mont            0xDA18  Loc
     --------------------------------------------------
        Segment part 1, <CODE> 1 [root]
                       (was CODE)
-       Address:  0xD274 Size: 0x4E Align: 2(1)
-      asm_poly_barrett     0xD274  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_poly_reduce (poly)
+       Address:  0xDA5A Size: 0x4E Align: 2(1)
+      asm_poly_barrett     0xDA5A  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_poly_reduce (poly)
                                                   PQCLEAN_KYBER512_CLEAN_poly_ntt (poly)
-      loop_barrett         0xD292  Loc
+      loop_barrett         0xDA78  Loc
 
       Absolute module symbols:
         __MSP430FR5720__  0x0000  Loc
@@ -378,13 +370,8 @@ File: C:\Users\dong\Desktop\MSP430 Code\first_kyber\Debug\Obj\cbd.r43
   Module: cbd
        Segment part 2, <CODE> 1
                       (was CODE)
-       Address:  0xD15C Size: 0xB4 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_poly_cbd_eta1  0xD15C  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_poly_getnoise_eta1 (poly)
-    --------------------------------------------------
-       Segment part 3, <CODE> 1
-                      (was CODE)
-       Address:  0xD4BC Size: 0xA2 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_poly_cbd_eta2  0xD4BC  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_poly_getnoise_eta2 (poly)
+       Address:  0xD942 Size: 0xB4 Align: 2(1)
+      PQCLEAN_KYBER512_CLEAN_poly_cbd_eta1  0xD942  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_poly_getnoise_eta1 (poly)
 
       Absolute module symbols:
         cbd3                 0x0000  Pub
@@ -402,82 +389,76 @@ File: C:\Users\dong\Desktop\MSP430 Code\first_kyber\Debug\Obj\fips202.r43
     --------------------------------------------------
        Segment part 3, <CODE> 1
                       (was CODE)
-       Address:  0xC1D8 Size: 0x2DC Align: 2(1)
+       Address:  0xC688 Size: 0x2DC Align: 2(1)
        Ref by:   sha3_512
                  sha3_256
                  shake256
                  ?Subroutine3
-      keccak_absorb        0xC1D8  Loc
+      keccak_absorb        0xC688  Loc
     --------------------------------------------------
        Segment part 4, <CODE> 1
                       (was CODE)
-       Address:  0xD414 Size: 0xA8 Align: 2(1)
+       Address:  0xDAA8 Size: 0xA8 Align: 2(1)
        Ref by:   sha3_512
                  sha3_256
                  shake256
                  ?Subroutine5
-      keccak_squeezeblocks  0xD414  Loc
+      keccak_squeezeblocks  0xDAA8  Loc
     --------------------------------------------------
        Segment part 18, <CODE> 1
                       (was CODE)
-       Address:  0xC718 Size: 0x26 Align: 2(1)
-      shake128_absorb      0xC718  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_kyber_shake128_absorb (symmetric-shake)
+       Address:  0xCDC4 Size: 0x26 Align: 2(1)
+      shake128_absorb      0xCDC4  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_kyber_shake128_absorb (symmetric-shake)
     --------------------------------------------------
        Segment part 19, <CODE> 1
                       (was CODE)
-       Address:  0xC73E Size: 0x10 Align: 2(1)
+       Address:  0xCDEA Size: 0x10 Align: 2(1)
        Ref by:   shake128_absorb
-      ?Subroutine3         0xC73E  Loc
+      ?Subroutine3         0xCDEA  Loc
     --------------------------------------------------
        Segment part 20, <CODE> 1
                       (was CODE)
-       Address:  0xC74E Size: 0x6 Align: 2(1)
-      shake128_squeezeblocks  0xC74E  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_gen_matrix (indcpa)
+       Address:  0xCDFA Size: 0x6 Align: 2(1)
+      shake128_squeezeblocks  0xCDFA  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_gen_matrix (indcpa)
     --------------------------------------------------
        Segment part 21, <CODE> 1
                       (was CODE)
-       Address:  0xC754 Size: 0xC Align: 2(1)
+       Address:  0xCE00 Size: 0xC Align: 2(1)
        Ref by:   shake128_squeezeblocks
-      ?Subroutine5         0xC754  Loc
+      ?Subroutine5         0xCE00  Loc
     --------------------------------------------------
        Segment part 24, <CODE> 1
                       (was CODE)
-       Address:  0xC760 Size: 0x2 Align: 2(1)
-      shake128_ctx_release  0xC760  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_gen_matrix (indcpa)
+       Address:  0xCE0C Size: 0x2 Align: 2(1)
+      shake128_ctx_release  0xCE0C  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_gen_matrix (indcpa)
     --------------------------------------------------
        Segment part 29, <CODE> 1
                       (was CODE)
-       Address:  0xC762 Size: 0x6 Align: 2(1)
+       Address:  0xCE0E Size: 0x6 Align: 2(1)
        Ref by:   shake128_ctx_release
-      ?Subroutine7         0xC762  Loc
+      ?Subroutine7         0xCE0E  Loc
     --------------------------------------------------
        Segment part 31, <CODE> 1
                       (was CODE)
-       Address:  0xC768 Size: 0x8 Align: 2(1)
+       Address:  0xCE14 Size: 0x8 Align: 2(1)
        Ref by:   shake256
                  shake128_absorb
-      ?Subroutine6         0xC768  Loc
+      ?Subroutine6         0xCE14  Loc
     --------------------------------------------------
        Segment part 32, <CODE> 1
                       (was CODE)
-       Address:  0xC770 Size: 0xC6 Align: 2(1)
-      shake256             0xC770  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_kyber_shake256_prf (symmetric-shake)
-                                                  PQCLEAN_KYBER512_CLEAN_crypto_kem_dec (kem)
-                                                  PQCLEAN_KYBER512_CLEAN_crypto_kem_enc (kem)
+       Address:  0xCE1C Size: 0xC6 Align: 2(1)
+      shake256             0xCE1C  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_kyber_shake256_prf (symmetric-shake)
     --------------------------------------------------
        Segment part 39, <CODE> 1
                       (was CODE)
-       Address:  0xC836 Size: 0x60 Align: 2(1)
-      sha3_256             0xC836  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_crypto_kem_dec (kem)
-                                                  PQCLEAN_KYBER512_CLEAN_crypto_kem_enc (kem)
-                                                  PQCLEAN_KYBER512_CLEAN_crypto_kem_keypair (kem)
+       Address:  0xCEE2 Size: 0x60 Align: 2(1)
+      sha3_256             0xCEE2  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_crypto_kem_keypair (kem)
     --------------------------------------------------
        Segment part 55, <CODE> 1
                       (was CODE)
-       Address:  0xC896 Size: 0x60 Align: 2(1)
-      sha3_512             0xC896  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_crypto_kem_dec (kem)
-                                                  PQCLEAN_KYBER512_CLEAN_crypto_kem_enc (kem)
-                                                  PQCLEAN_KYBER512_CLEAN_indcpa_keypair (indcpa)
+       Address:  0xCF42 Size: 0x60 Align: 2(1)
+      sha3_512             0xCF42  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_keypair (indcpa)
 
       Absolute module symbols:
         store64              0x0000  Pub
@@ -492,26 +473,14 @@ File: C:\Users\dong\Desktop\MSP430 Code\first_kyber\Debug\Obj\indcpa.r43
   Module: indcpa
        Segment part 2, <CODE> 1
                       (was CODE)
-       Address:  0xC8F6 Size: 0x1C2 Align: 2(1)
-       Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_enc
-                 PQCLEAN_KYBER512_CLEAN_indcpa_keypair
-      PQCLEAN_KYBER512_CLEAN_gen_matrix  0xC8F6  Pub
+       Address:  0xCFA2 Size: 0x1C2 Align: 2(1)
+       Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_keypair
+      PQCLEAN_KYBER512_CLEAN_gen_matrix  0xCFA2  Pub
     --------------------------------------------------
        Segment part 3, <CODE> 1
                       (was CODE)
-       Address:  0xCEC4 Size: 0x108 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_indcpa_keypair  0xCEC4  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_crypto_kem_keypair (kem)
-    --------------------------------------------------
-       Segment part 4, <CODE> 1
-                      (was CODE)
-       Address:  0xCD8C Size: 0x138 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_indcpa_enc  0xCD8C  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_crypto_kem_dec (kem)
-                                                                PQCLEAN_KYBER512_CLEAN_crypto_kem_enc (kem)
-    --------------------------------------------------
-       Segment part 5, <CODE> 1
-                      (was CODE)
-       Address:  0xD6CA Size: 0x72 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_indcpa_dec  0xD6CA  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_crypto_kem_dec (kem)
+       Address:  0xD83A Size: 0x108 Align: 2(1)
+      PQCLEAN_KYBER512_CLEAN_indcpa_keypair  0xD83A  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_crypto_kem_keypair (kem)
 
       Absolute module symbols:
         rej_uniform        0x0000  Pub
@@ -526,19 +495,9 @@ File: C:\Users\dong\Desktop\MSP430 Code\first_kyber\Debug\Obj\kem.r43
   Module: kem
        Segment part 4, <CODE> 1
                       (was CODE)
-       Address:  0xD7AE Size: 0x6A Align: 2(1)
+       Address:  0xDE6C Size: 0x6A Align: 2(1)
       PQCLEAN_KYBER512_CLEAN_crypto_kem_keypair
-                                                0xD7AE  Pub  Ref by:   main (main)
-    --------------------------------------------------
-       Segment part 5, <CODE> 1
-                      (was CODE)
-       Address:  0xD36C Size: 0xA8 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_crypto_kem_enc  0xD36C  Pub  Ref by:   main (main)
-    --------------------------------------------------
-       Segment part 6, <CODE> 1
-                      (was CODE)
-       Address:  0xD2C2 Size: 0xAA Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_crypto_kem_dec  0xD2C2  Pub  Ref by:   main (main)
+                                                0xDE6C  Pub  Ref by:   main (main)
 **************************************************************
 File: C:\Users\dong\Desktop\MSP430 Code\first_kyber\Debug\Obj\main.r43
   Module: main
@@ -551,10 +510,14 @@ File: C:\Users\dong\Desktop\MSP430 Code\first_kyber\Debug\Obj\main.r43
       WDTCTL_L             0x015C  Loc
       WDTCTL_bit           0x015C  Loc
     --------------------------------------------------
-       Segment part 5, <CODE> 1
+       Segment part 6, <CODE> 1
                       (was CODE)
-       Address:  0xD5E4 Size: 0x74 Align: 2(1)
-      main                 0xD5E4  Pub  Ref by:   Segment part 27 (?cstart)
+       Address:  0xDD80 Size: 0x7A Align: 2(1)
+      main                 0xDD80  Pub  Ref by:   Segment part 27 (?cstart)
+    --------------------------------------------------
+       Segment part 5, DATA16_C
+       Address:  0xC1C0 Size: 0x9 Align: 1(0)
+       Ref by:   main
 **************************************************************
 File: C:\Users\dong\Desktop\MSP430 Code\first_kyber\Debug\Obj\ntt.r43
   Module: ntt
@@ -567,149 +530,72 @@ File: C:\Users\dong\Desktop\MSP430 Code\first_kyber\Debug\Obj\ntt.r43
 **************************************************************
 File: C:\Users\dong\Desktop\MSP430 Code\first_kyber\Debug\Obj\poly.r43
   Module: poly
-       Segment part 2, <CODE> 1
-                      (was CODE)
-       Address:  0xCFCC Size: 0xD8 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_poly_compress  0xCFCC  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_enc (indcpa)
-    --------------------------------------------------
-       Segment part 3, <CODE> 1
-                      (was CODE)
-       Address:  0xDAB0 Size: 0x46 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_poly_decompress  0xDAB0  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_dec (indcpa)
-    --------------------------------------------------
        Segment part 4, <CODE> 1
                       (was CODE)
-       Address:  0xDA66 Size: 0x4A Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_poly_tobytes  0xDA66  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_polyvec_tobytes (polyvec)
-    --------------------------------------------------
-       Segment part 5, <CODE> 1
-                      (was CODE)
-       Address:  0xD948 Size: 0x60 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_poly_frombytes  0xD948  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_polyvec_frombytes (polyvec)
-    --------------------------------------------------
-       Segment part 6, <CODE> 1
-                      (was CODE)
-       Address:  0xD0A4 Size: 0xB8 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_poly_frommsg  0xD0A4  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_enc (indcpa)
-    --------------------------------------------------
-       Segment part 7, <CODE> 1
-                      (was CODE)
-       Address:  0xD73C Size: 0x72 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_poly_tomsg  0xD73C  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_dec (indcpa)
+       Address:  0xE038 Size: 0x4A Align: 2(1)
+      PQCLEAN_KYBER512_CLEAN_poly_tobytes  0xE038  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_polyvec_tobytes (polyvec)
     --------------------------------------------------
        Segment part 8, <CODE> 1
                       (was CODE)
-       Address:  0xDBBA Size: 0x26 Align: 2(1)
+       Address:  0xE2AC Size: 0x26 Align: 2(1)
       PQCLEAN_KYBER512_CLEAN_poly_getnoise_eta1
-                                                0xDBBA  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_enc (indcpa)
-                                                                       PQCLEAN_KYBER512_CLEAN_indcpa_keypair (indcpa)
-    --------------------------------------------------
-       Segment part 9, <CODE> 1
-                      (was CODE)
-       Address:  0xDBE0 Size: 0x26 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_poly_getnoise_eta2
-                                                0xDBE0  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_enc (indcpa)
+                                                0xE2AC  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_keypair (indcpa)
     --------------------------------------------------
        Segment part 10, <CODE> 1
                       (was CODE)
-       Address:  0xDCC8 Size: 0x12 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_poly_ntt  0xDCC8  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_polyvec_ntt (polyvec)
-    --------------------------------------------------
-       Segment part 11, <CODE> 1
-                      (was CODE)
-       Address:  0xDD16 Size: 0x4 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_poly_invntt_tomont
-                                                0xDD16  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_polyvec_invntt_tomont (polyvec)
-                                                                       PQCLEAN_KYBER512_CLEAN_indcpa_dec (indcpa)
-                                                                       PQCLEAN_KYBER512_CLEAN_indcpa_enc (indcpa)
+       Address:  0xE4CE Size: 0x12 Align: 2(1)
+      PQCLEAN_KYBER512_CLEAN_poly_ntt  0xE4CE  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_polyvec_ntt (polyvec)
     --------------------------------------------------
        Segment part 12, <CODE> 1
                       (was CODE)
-       Address:  0xDCFA Size: 0x8 Align: 2(1)
+       Address:  0xE5E0 Size: 0x8 Align: 2(1)
       PQCLEAN_KYBER512_CLEAN_poly_basemul_montgomery
-                                                0xDCFA  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_polyvec_basemul_acc_montgomery (polyvec)
+                                                0xE5E0  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_polyvec_basemul_acc_montgomery (polyvec)
     --------------------------------------------------
        Segment part 13, <CODE> 1
                       (was CODE)
-       Address:  0xDD1A Size: 0x4 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_poly_tomont  0xDD1A  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_keypair (indcpa)
+       Address:  0xE5EC Size: 0x4 Align: 2(1)
+      PQCLEAN_KYBER512_CLEAN_poly_tomont  0xE5EC  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_keypair (indcpa)
     --------------------------------------------------
        Segment part 14, <CODE> 1
                       (was CODE)
-       Address:  0xDD0A Size: 0x4 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_poly_reduce  0xDD0A  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_polyvec_reduce (polyvec)
+       Address:  0xE5F4 Size: 0x4 Align: 2(1)
+      PQCLEAN_KYBER512_CLEAN_poly_reduce  0xE5F4  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_polyvec_reduce (polyvec)
                                                                  PQCLEAN_KYBER512_CLEAN_polyvec_basemul_acc_montgomery (polyvec)
-                                                                 PQCLEAN_KYBER512_CLEAN_indcpa_dec (indcpa)
-                                                                 PQCLEAN_KYBER512_CLEAN_indcpa_enc (indcpa)
     --------------------------------------------------
        Segment part 15, <CODE> 1
                       (was CODE)
-       Address:  0xDB62 Size: 0x32 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_poly_add  0xDB62  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_polyvec_add (polyvec)
+       Address:  0xE1C2 Size: 0x32 Align: 2(1)
+      PQCLEAN_KYBER512_CLEAN_poly_add  0xE1C2  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_polyvec_add (polyvec)
                                                               PQCLEAN_KYBER512_CLEAN_polyvec_basemul_acc_montgomery (polyvec)
-                                                              PQCLEAN_KYBER512_CLEAN_indcpa_enc (indcpa)
-    --------------------------------------------------
-       Segment part 16, <CODE> 1
-                      (was CODE)
-       Address:  0xDB30 Size: 0x32 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_poly_sub  0xDB30  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_dec (indcpa)
 **************************************************************
 File: C:\Users\dong\Desktop\MSP430 Code\first_kyber\Debug\Obj\polyvec.r43
   Module: polyvec
-       Segment part 2, <CODE> 1
-                      (was CODE)
-       Address:  0xC4B4 Size: 0x264 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_polyvec_compress  0xC4B4  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_enc (indcpa)
-    --------------------------------------------------
-       Segment part 3, <CODE> 1
-                      (was CODE)
-       Address:  0xCC3A Size: 0x152 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_polyvec_decompress
-                                                0xCC3A  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_dec (indcpa)
-    --------------------------------------------------
        Segment part 4, <CODE> 1
                       (was CODE)
-       Address:  0xDC06 Size: 0x1E Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_polyvec_tobytes  0xDC06  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_keypair (indcpa)
-    --------------------------------------------------
-       Segment part 5, <CODE> 1
-                      (was CODE)
-       Address:  0xDC24 Size: 0x1E Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_polyvec_frombytes  0xDC24  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_dec (indcpa)
-                                                                       PQCLEAN_KYBER512_CLEAN_indcpa_enc (indcpa)
+       Address:  0xE3E0 Size: 0x1E Align: 2(1)
+      PQCLEAN_KYBER512_CLEAN_polyvec_tobytes  0xE3E0  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_keypair (indcpa)
     --------------------------------------------------
        Segment part 6, <CODE> 1
                       (was CODE)
-       Address:  0xDC60 Size: 0x16 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_polyvec_ntt  0xDC60  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_dec (indcpa)
-                                                                 PQCLEAN_KYBER512_CLEAN_indcpa_enc (indcpa)
-                                                                 PQCLEAN_KYBER512_CLEAN_indcpa_keypair (indcpa)
-    --------------------------------------------------
-       Segment part 7, <CODE> 1
-                      (was CODE)
-       Address:  0xDC8C Size: 0x16 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_polyvec_invntt_tomont
-                                                0xDC8C  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_enc (indcpa)
+       Address:  0xE464 Size: 0x16 Align: 2(1)
+      PQCLEAN_KYBER512_CLEAN_polyvec_ntt  0xE464  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_keypair (indcpa)
     --------------------------------------------------
        Segment part 8, <CODE> 1
                       (was CODE)
-       Address:  0xDAF6 Size: 0x3A Align: 2(1)
+       Address:  0xE188 Size: 0x3A Align: 2(1)
       PQCLEAN_KYBER512_CLEAN_polyvec_basemul_acc_montgomery
-                                                0xDAF6  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_dec (indcpa)
-                                                                       PQCLEAN_KYBER512_CLEAN_indcpa_enc (indcpa)
-                                                                       PQCLEAN_KYBER512_CLEAN_indcpa_keypair (indcpa)
+                                                0xE188  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_keypair (indcpa)
     --------------------------------------------------
        Segment part 9, <CODE> 1
                       (was CODE)
-       Address:  0xDC76 Size: 0x16 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_polyvec_reduce  0xDC76  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_enc (indcpa)
-                                                                    PQCLEAN_KYBER512_CLEAN_indcpa_keypair (indcpa)
+       Address:  0xE47A Size: 0x16 Align: 2(1)
+      PQCLEAN_KYBER512_CLEAN_polyvec_reduce  0xE47A  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_keypair (indcpa)
     --------------------------------------------------
        Segment part 10, <CODE> 1
                       (was CODE)
-       Address:  0xDB94 Size: 0x26 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_polyvec_add  0xDB94  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_enc (indcpa)
-                                                                 PQCLEAN_KYBER512_CLEAN_indcpa_keypair (indcpa)
+       Address:  0xE2F8 Size: 0x26 Align: 2(1)
+      PQCLEAN_KYBER512_CLEAN_polyvec_add  0xE2F8  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_indcpa_keypair (indcpa)
 **************************************************************
 File: C:\Users\dong\Desktop\MSP430 Code\first_kyber\Debug\Obj\reduce.r43
   Module: reduce
@@ -718,35 +604,25 @@ File: C:\Users\dong\Desktop\MSP430 Code\first_kyber\Debug\Obj\symmetric-shake.r4
   Module: symmetric-shake
        Segment part 2, <CODE> 1
                       (was CODE)
-       Address:  0xD9A8 Size: 0x2A Align: 2(1)
+       Address:  0xDF3A Size: 0x2A Align: 2(1)
       PQCLEAN_KYBER512_CLEAN_kyber_shake128_absorb
-                                                0xD9A8  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_gen_matrix (indcpa)
+                                                0xDF3A  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_gen_matrix (indcpa)
     --------------------------------------------------
        Segment part 3, <CODE> 1
                       (was CODE)
-       Address:  0xD9D2 Size: 0x8 Align: 2(1)
+       Address:  0xDF64 Size: 0x8 Align: 2(1)
        Ref by:   PQCLEAN_KYBER512_CLEAN_kyber_shake256_prf
                  PQCLEAN_KYBER512_CLEAN_kyber_shake128_absorb
-      ?Subroutine0         0xD9D2  Loc
+      ?Subroutine0         0xDF64  Loc
     --------------------------------------------------
        Segment part 4, <CODE> 1
                       (was CODE)
-       Address:  0xD9DA Size: 0x2E Align: 2(1)
+       Address:  0xDF6C Size: 0x2E Align: 2(1)
       PQCLEAN_KYBER512_CLEAN_kyber_shake256_prf
-                                                0xD9DA  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_poly_getnoise_eta2 (poly)
-                                                                       PQCLEAN_KYBER512_CLEAN_poly_getnoise_eta1 (poly)
+                                                0xDF6C  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_poly_getnoise_eta1 (poly)
 **************************************************************
 File: C:\Users\dong\Desktop\MSP430 Code\first_kyber\Debug\Obj\verify.r43
   Module: verify
-       Segment part 2, <CODE> 1
-                      (was CODE)
-       Address:  0xD818 Size: 0x6A Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_verify  0xD818  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_crypto_kem_dec (kem)
-    --------------------------------------------------
-       Segment part 3, <CODE> 1
-                      (was CODE)
-       Address:  0xD8E6 Size: 0x62 Align: 2(1)
-      PQCLEAN_KYBER512_CLEAN_cmov  0xD8E6  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_crypto_kem_dec (kem)
 **************************************************************
 File: C:\Program Files\IAR Systems\Embedded Workbench 9.1\430\lib\dlib\dl430xlmfn.r43
   Module: ?abort
@@ -754,29 +630,38 @@ File: C:\Program Files\IAR Systems\Embedded Workbench 9.1\430\lib\dlib\dl430xlmf
   Module: ?__dbg_break
        Segment part 2, <CODE> 1
                       (was CODE)
-       Address:  0xDD1E Size: 0x2 Align: 2(1)
-      __DebugBreak         0xDD1E  Pub  Ref by:   __exit (?__exit)
+       Address:  0xE5F8 Size: 0x2 Align: 2(1)
+      __DebugBreak         0xE5F8  Pub  Ref by:   __exit (?__exit)
+                                                  __dwrite (?__dwrite)
   ============================================================
   Module: ?__dwrite
+       Segment part 2, <CODE> 1
+                      (was CODE)
+       Address:  0xE342 Size: 0x24 Align: 2(1)
+      __dwrite             0xE342  Pub  Ref by:   __write (?__write)
   ============================================================
   Module: ?__exit
        Segment part 2, <CODE> 1
                       (was CODE)
-       Address:  0xDCA2 Size: 0x14 Align: 2(1)
-      __exit               0xDCA2  Pub  Ref by:   Segment part 6 (?_exit)
+       Address:  0xE4A6 Size: 0x14 Align: 2(1)
+      __exit               0xE4A6  Pub  Ref by:   Segment part 6 (?_exit)
                                                   _exit (?_exit)
   ============================================================
   Module: ?__write
+       Segment part 2, <CODE> 1
+                      (was CODE)
+       Address:  0xE59C Size: 0xC Align: 2(1)
+      __write              0xE59C  Pub  Ref by:   putchar (?putchar)
   ============================================================
   Module: ?_exit
        Segment part 0, <CODE> 1
                       (was CODE)
-       Address:  0xDD0E Size: 0x0 Align: 2(1)
-      _exit                0xDD0E  Pub  Ref by:   exit (?exit)
+       Address:  0xE5F0 Size: 0x0 Align: 2(1)
+      _exit                0xE5F0  Pub  Ref by:   exit (?exit)
     --------------------------------------------------
        Segment part 6, <CODE> 1
                       (was CODE)
-       Address:  0xDD0E Size: 0x4 Align: 2(1)
+       Address:  0xE5F0 Size: 0x4 Align: 2(1)
        Ref by:   _exit
   ============================================================
   Module: ?cppinit
@@ -792,7 +677,7 @@ File: C:\Program Files\IAR Systems\Embedded Workbench 9.1\430\lib\dlib\dl430xlmf
        Address:  0x2BA6 Size: 0x0 Align: 2(1)
     --------------------------------------------------
        Segment part 6, CODE_ID
-       Address:  0xDD20 Size: 0x0 Align: 2(1)
+       Address:  0xE5FA Size: 0x0 Align: 2(1)
     --------------------------------------------------
        Segment part 7, DATA20_Z
        Address:  0x2BA6 Size: 0x0 Align: 2(1)
@@ -801,30 +686,30 @@ File: C:\Program Files\IAR Systems\Embedded Workbench 9.1\430\lib\dlib\dl430xlmf
        Address:  0x2BA6 Size: 0x0 Align: 2(1)
     --------------------------------------------------
        Segment part 9, DATA20_ID
-       Address:  0xDD20 Size: 0x0 Align: 2(1)
+       Address:  0xE5FA Size: 0x0 Align: 2(1)
     --------------------------------------------------
        Segment part 10, DATA20_C
-       Address:  0xDD20 Size: 0x0 Align: 2(1)
+       Address:  0xE5FA Size: 0x0 Align: 2(1)
     --------------------------------------------------
        Segment part 12, DATA20_N
        Address:  0x2BA6 Size: 0x0 Align: 2(1)
     --------------------------------------------------
        Segment part 15, CSTART
-       Address:  0xC1C0 Size: 0x4 Align: 2(1)
-      __program_start      0xC1C0  Pub  Ref by:   ?reset_vector (?reset_vector)
+       Address:  0xC1E2 Size: 0x4 Align: 2(1)
+      __program_start      0xC1E2  Pub  Ref by:   ?reset_vector (?reset_vector)
                                                   Absolute parts (?ABS_ENTRY_MOD)
-      ?cstart_begin        0xC1C0  Pub
+      ?cstart_begin        0xC1E2  Pub
     --------------------------------------------------
        Segment part 20, CSTART
-       Address:  0xC1C4 Size: 0xC Align: 2(1)
-      ?cstart_init_zero    0xC1C4  Pub  Ref by:   __data16_Aldata (?xxmemxmalloc)
+       Address:  0xC1E6 Size: 0xC Align: 2(1)
+      ?cstart_init_zero    0xC1E6  Pub  Ref by:   __data16_Aldata (?xxmemxmalloc)
                                                   Segment part 2 (?xgetmemchunk)
     --------------------------------------------------
        Segment part 27, CSTART
-       Address:  0xC1D0 Size: 0x8 Align: 2(1)
+       Address:  0xC1F2 Size: 0x8 Align: 2(1)
        Ref by:   Segment part 15
-      ?cstart_call_main    0xC1D0  Pub
-      ?cstart_end          0xC1D8  Pub
+      ?cstart_call_main    0xC1F2  Pub
+      ?cstart_end          0xC1FA  Pub
   ============================================================
   Module: lowinit
   ============================================================
@@ -833,16 +718,107 @@ File: C:\Program Files\IAR Systems\Embedded Workbench 9.1\430\lib\dlib\dl430xlmf
        Address:  0xFFFE Size: 0x2 Align: 2(1)
       ?reset_vector        0xFFFE  Pub  Ref by:   Segment part 15 (?cstart)
   ============================================================
+  Module: ?div64i
+       Segment part 2, <CODE> 1
+                      (was CODE)
+       Address:  0xDB50 Size: 0xA2 Align: 2(1)
+      _Div64u              0xDB50  Pub  Ref by:   _LitobLarge (?xprintflarge)
+    --------------------------------------------------
+       Segment part 4, <CODE> 1
+                      (was CODE)
+       Address:  0xE41A Size: 0x1A Align: 2(1)
+       Ref by:   _Div64u
+  ============================================================
+  Module: ?div
+       Segment part 0, <CODE> 1
+                      (was CODE)
+       Address:  0xE490 Size: 0x16 Align: 2(1)
+      div                  0xE490  Pub  Ref by:   _GenldLarge (?xprintflarge)
+  ============================================================
   Module: ?exit
        Segment part 2, <CODE> 1
                       (was CODE)
-       Address:  0xDD12 Size: 0x4 Align: 2(1)
-      exit                 0xDD12  Pub  Ref by:   Segment part 27 (?cstart)
+       Address:  0xE5E8 Size: 0x4 Align: 2(1)
+      exit                 0xE5E8  Pub  Ref by:   Segment part 27 (?cstart)
                                                   ?Subroutine6 (fips202)
+  ============================================================
+  Module: ?Mul32fHw32
+       Segment part 0, <CODE> 1
+                      (was CODE)
+       Address:  0xD724 Size: 0x116 Align: 2(1)
+      ?Mul32fHw32          0xD724  Pub  Ref by:   _LdtobLarge (?xprintflarge)
+                                                  scale (?xprintflarge)
   ============================================================
   Module: ?FrwpInit
   ============================================================
+  Module: ?Cast32f32i
+       Segment part 1, <CODE> 1
+                      (was CODE)
+       Address:  0xDD02 Size: 0x7E Align: 2(1)
+      _Cast32uto32f        0xDD02  Pub  Ref by:   _LdtobLarge (?xprintflarge)
+  ============================================================
+  Module: _Cast32fto32u
+       Segment part 0, <CODE> 1
+                      (was CODE)
+       Address:  0xE590 Size: 0xC Align: 2(1)
+      _Cast32fto32u        0xE590  Pub  Ref by:   _LdtobLarge (?xprintflarge)
+  ============================================================
+  Module: ?FLT_Extract
+       Segment part 0, <CODE> 1
+                      (was CODE)
+       Address:  0xDFEC Size: 0x4C Align: 2(1)
+      ?FLT_Extract         0xDFEC  Pub  Ref by:   _Cast32fto32u (_Cast32fto32u)
+  ============================================================
+  Module: ?FLT_LT
+       Segment part 0, <CODE> 1
+                      (was CODE)
+       Address:  0xDF9A Size: 0x52 Align: 2(1)
+      ?FLT_LT              0xDF9A  Pub  Ref by:   _LdtobLarge (?xprintflarge)
+  ============================================================
+  Module: _Div32f
+       Segment part 0, <CODE> 1
+                      (was CODE)
+       Address:  0xD5F4 Size: 0x130 Align: 2(1)
+      _Div32f              0xD5F4  Pub  Ref by:   _LdtobLarge (?xprintflarge)
+  ============================================================
+  Module: _Add32f
+       Segment part 0, <CODE> 1
+                      (was CODE)
+       Address:  0xD490 Size: 0x4 Align: 2(1)
+      _Sub32f              0xD490  Pub  Ref by:   _LdtobLarge (?xprintflarge)
+    --------------------------------------------------
+       Segment part 1, <CODE> 1
+                      (was CODE)
+       Address:  0xD494 Size: 0x160 Align: 2(1)
+       Ref by:   _Sub32f
+      _Add32f              0xD494  Pub
+  ============================================================
   Module: ?malloc
+  ============================================================
+  Module: ?DivMod816u
+       Segment part 1, <CODE> 1
+                      (was CODE)
+       Address:  0xE44C Size: 0x18 Align: 2(1)
+      ?DivMod16u           0xE44C  Pub  Ref by:   ?DivMod16s (?DivMod816s)
+  ============================================================
+  Module: ?DivMod816s
+       Segment part 1, <CODE> 1
+                      (was CODE)
+       Address:  0xE254 Size: 0x30 Align: 2(1)
+      ?DivMod16s           0xE254  Pub  Ref by:   div (?div)
+  ============================================================
+  Module: ?DivMod32u
+       Segment part 0, <CODE> 1
+                      (was CODE)
+       Address:  0xE1F4 Size: 0x30 Align: 2(1)
+      ?DivMod32u           0xE1F4  Pub  Ref by:   _LdtobLarge (?xprintflarge)
+                                                  ?DivMod32s (?DivMod32s)
+  ============================================================
+  Module: ?DivMod32s
+       Segment part 0, <CODE> 1
+                      (was CODE)
+       Address:  0xE10A Size: 0x40 Align: 2(1)
+      ?DivMod32s           0xE10A  Pub  Ref by:   _LdtobLarge (?xprintflarge)
   ============================================================
   Module: ?ShiftLeft32
   ============================================================
@@ -851,61 +827,25 @@ File: C:\Program Files\IAR Systems\Embedded Workbench 9.1\430\lib\dlib\dl430xlmf
   Module: ?ShiftLeft64_n
   ============================================================
   Module: ?ShiftRight16s_n
-       Segment part 4, <CODE> 1
-                      (was CODE)
-       Address:  0xDD02 Size: 0x8 Align: 2(1)
-      ?ShiftRight16s_3     0xDD02  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_poly_tomsg (poly)
-                                                  PQCLEAN_KYBER512_CLEAN_poly_compress (poly)
   ============================================================
   Module: ?ShiftRight32u
-       Segment part 0, <CODE> 1
-                      (was CODE)
-       Address:  0xDA08 Size: 0x40 Align: 2(1)
-      ?ShiftRight32u       0xDA08  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_poly_cbd_eta2 (cbd)
-    --------------------------------------------------
-       Segment part 1, <CODE> 1
-                      (was CODE)
-       Address:  0xDA48 Size: 0x4 Align: 2(1)
-       Ref by:   ?ShiftRight32u
-      ?ShiftRight32u_7     0xDA48  Pub
-    --------------------------------------------------
-       Segment part 2, <CODE> 1
-                      (was CODE)
-       Address:  0xDA4C Size: 0x4 Align: 2(1)
-       Ref by:   ?ShiftRight32u_7
-      ?ShiftRight32u_6     0xDA4C  Pub
-    --------------------------------------------------
-       Segment part 3, <CODE> 1
-                      (was CODE)
-       Address:  0xDA50 Size: 0x4 Align: 2(1)
-       Ref by:   ?ShiftRight32u_6
-      ?ShiftRight32u_5     0xDA50  Pub
-    --------------------------------------------------
-       Segment part 4, <CODE> 1
-                      (was CODE)
-       Address:  0xDA54 Size: 0x4 Align: 2(1)
-       Ref by:   ?ShiftRight32u_5
-      ?ShiftRight32u_4     0xDA54  Pub
-    --------------------------------------------------
-       Segment part 5, <CODE> 1
-                      (was CODE)
-       Address:  0xDA58 Size: 0x4 Align: 2(1)
-       Ref by:   ?ShiftRight32u_4
-      ?ShiftRight32u_3     0xDA58  Pub
-    --------------------------------------------------
-       Segment part 6, <CODE> 1
-                      (was CODE)
-       Address:  0xDA5C Size: 0xA Align: 2(1)
-       Ref by:   ?ShiftRight32u_3
-      ?ShiftRight32u_2     0xDA5C  Pub
   ============================================================
   Module: ?ShiftRight64u
+  ============================================================
+  Module: ?memchr
+       Segment part 2, <CODE> 1
+                      (was CODE)
+       Address:  0xE4BA Size: 0x14 Align: 2(1)
+      __iar_Memchr         0xE4BA  Pub  Ref by:   _PrintfLarge (?xprintflarge)
   ============================================================
   Module: ?memcpy
        Segment part 2, <CODE> 1
                       (was CODE)
-       Address:  0xDCB6 Size: 0x12 Align: 2(1)
-      memcpy               0xDCB6  Pub  Ref by:   PQCLEAN_KYBER512_CLEAN_kyber_shake256_prf (symmetric-shake)
+       Address:  0xE504 Size: 0x12 Align: 2(1)
+      memcpy               0xE504  Pub  Ref by:   Segment part 14 (?xprintflarge)
+                                                  _GenldLarge (?xprintflarge)
+                                                  _LdtobLarge (?xprintflarge)
+                                                  PQCLEAN_KYBER512_CLEAN_kyber_shake256_prf (symmetric-shake)
                                                   PQCLEAN_KYBER512_CLEAN_kyber_shake128_absorb (symmetric-shake)
   ============================================================
   Module: ?memmove
@@ -913,29 +853,77 @@ File: C:\Program Files\IAR Systems\Embedded Workbench 9.1\430\lib\dlib\dl430xlmf
   Module: ?ClearMemoryWords
        Segment part 0, <CODE> 1
                       (was CODE)
-       Address:  0xDCDA Size: 0x10 Align: 2(1)
-      ?ClearMemoryWords    0xDCDA  Pub  Ref by:   main (main)
-                                                  PQCLEAN_KYBER512_CLEAN_crypto_kem_enc (kem)
+       Address:  0xE528 Size: 0x10 Align: 2(1)
+      ?ClearMemoryWords    0xE528  Pub  Ref by:   main (main)
   ============================================================
   Module: ?memzero
        Segment part 2, <CODE> 1
                       (was CODE)
-       Address:  0xDCEA Size: 0x10 Align: 2(1)
-      __data16_memzero     0xDCEA  Pub  Ref by:   ?cstart_init_zero (?cstart)
+       Address:  0xE548 Size: 0x10 Align: 2(1)
+      __data16_memzero     0xE548  Pub  Ref by:   ?cstart_init_zero (?cstart)
   ============================================================
   Module: ?MpuInit
+  ============================================================
+  Module: ?Mul8Hw
+       Segment part 0, <CODE> 1
+                      (was CODE)
+       Address:  0xE366 Size: 0x4 Align: 2(1)
+      ?Mul8Hw              0xE366  Pub  Ref by:   _LitobLarge (?xprintflarge)
+    --------------------------------------------------
+       Segment part 1, <CODE> 1
+                      (was CODE)
+       Address:  0xE36A Size: 0x1C Align: 2(1)
+       Ref by:   ?Mul8Hw
+      ?Mul16Hw             0xE36A  Pub
+      ?Mul16to32uHw        0xE36A  Pub
+  ============================================================
+  Module: ?Mul16to32sHw
+       Segment part 0, <CODE> 1
+                      (was CODE)
+       Address:  0xE3FE Size: 0x1C Align: 2(1)
+      ?Mul16to32sHw        0xE3FE  Pub  Ref by:   _LdtobLarge (?xprintflarge)
+  ============================================================
+  Module: ?printf
+       Segment part 2, <CODE> 1
+                      (was CODE)
+       Address:  0xE3A4 Size: 0x1E Align: 2(1)
+      printf               0xE3A4  Pub  Ref by:   main (main)
+  ============================================================
+  Module: ?putchar
+       Segment part 2, <CODE> 1
+                      (was CODE)
+       Address:  0xE284 Size: 0x28 Align: 2(1)
+      putchar              0xE284  Pub  Ref by:   _Prout (?xprout)
   ============================================================
   Module: ?setjmp
   ============================================================
   Module: ?longjmp
   ============================================================
+  Module: ?strchr
+       Segment part 2, <CODE> 1
+                      (was CODE)
+       Address:  0xE566 Size: 0xE Align: 2(1)
+      __iar_Strchr         0xE566  Pub  Ref by:   _PrintfLarge (?xprintflarge)
+  ============================================================
+  Module: ?strlen
+       Segment part 2, <CODE> 1
+                      (was CODE)
+       Address:  0xE4E0 Size: 0x12 Align: 2(1)
+      strlen               0xE4E0  Pub  Ref by:   _PrintfLarge (?xprintflarge)
+  ============================================================
   Module: ?xcloseall
+  ============================================================
+  Module: ?xdunscal
+       Segment part 2, <CODE> 1
+                      (was CODE)
+       Address:  0xE082 Size: 0x46 Align: 2(1)
+      __iar_Dunscale       0xE082  Pub  Ref by:   _LdtobLarge (?xprintflarge)
   ============================================================
   Module: ?xgetmemchunk
        Segment part 4, <CODE> 1
                       (was CODE)
-       Address:  0xDC42 Size: 0x1E Align: 2(1)
-      __data16_GetMemChunk  0xDC42  Pub  Ref by:   __data16_findmem (?xxmemxmalloc)
+       Address:  0xE386 Size: 0x1E Align: 2(1)
+      __data16_GetMemChunk  0xE386  Pub  Ref by:   __data16_findmem (?xxmemxmalloc)
     --------------------------------------------------
        Segment part 2, DATA16_Z
        Address:  0x1C00 Size: 0x2 Align: 2(1)
@@ -944,11 +932,164 @@ File: C:\Program Files\IAR Systems\Embedded Workbench 9.1\430\lib\dlib\dl430xlmf
        Segment part 6, DATA16_HEAP
        Address:  0x1C06 Size: 0x0 Align: 2(1)
   ============================================================
+  Module: ?xprintflarge
+       Segment part 20, <CODE> 1
+                      (was CODE)
+       Address:  0xC1FA Size: 0x48E Align: 2(1)
+      _PrintfLarge         0xC1FA  Pub  Ref by:   printf (?printf)
+    --------------------------------------------------
+       Segment part 23, <CODE> 1
+                      (was CODE)
+       Address:  0xE5A8 Size: 0xC Align: 2(1)
+       Ref by:   _PrintfLarge
+    --------------------------------------------------
+       Segment part 24, <CODE> 1
+                      (was CODE)
+       Address:  0xE5B4 Size: 0xC Align: 2(1)
+       Ref by:   _PrintfLarge
+    --------------------------------------------------
+       Segment part 8, <CODE> 1
+                      (was CODE)
+       Address:  0xDBF2 Size: 0x8A Align: 2(1)
+       Ref by:   _PrintfLarge
+      LoadInt              0xDBF2  Loc
+    --------------------------------------------------
+       Segment part 9, <CODE> 1
+                      (was CODE)
+       Address:  0xE574 Size: 0xE Align: 2(1)
+       Ref by:   LoadInt
+    --------------------------------------------------
+       Segment part 27, <CODE> 1
+                      (was CODE)
+       Address:  0xE224 Size: 0x30 Align: 2(1)
+       Ref by:   Segment part 24
+      pad                  0xE224  Loc
+    --------------------------------------------------
+       Segment part 18, <CODE> 1
+                      (was CODE)
+       Address:  0xD164 Size: 0x1AA Align: 2(1)
+       Ref by:   _PrintfLarge
+      _LitobLarge          0xD164  Loc
+    --------------------------------------------------
+       Segment part 19, <CODE> 1
+                      (was CODE)
+       Address:  0xE516 Size: 0x12 Align: 2(1)
+       Ref by:   _LitobLarge
+    --------------------------------------------------
+       Segment part 16, <CODE> 1
+                      (was CODE)
+       Address:  0xE0C8 Size: 0x42 Align: 2(1)
+       Ref by:   _LdtobLarge
+      scale                0xE0C8  Loc
+    --------------------------------------------------
+       Segment part 17, <CODE> 1
+                      (was CODE)
+       Address:  0xC964 Size: 0x23E Align: 2(1)
+       Ref by:   _PrintfLarge
+      _LdtobLarge          0xC964  Loc
+    --------------------------------------------------
+       Segment part 10, <CODE> 1
+                      (was CODE)
+       Address:  0xCBA2 Size: 0x222 Align: 2(1)
+       Ref by:   _LdtobLarge
+      _GenldLarge          0xCBA2  Loc
+    --------------------------------------------------
+       Segment part 11, <CODE> 1
+                      (was CODE)
+       Address:  0xE5C0 Size: 0xC Align: 2(1)
+       Ref by:   _GenldLarge
+    --------------------------------------------------
+       Segment part 12, <CODE> 1
+                      (was CODE)
+       Address:  0xE5D6 Size: 0xA Align: 2(1)
+       Ref by:   Segment part 11
+                 _GenldLarge
+    --------------------------------------------------
+       Segment part 13, <CODE> 1
+                      (was CODE)
+       Address:  0xE538 Size: 0x10 Align: 2(1)
+       Ref by:   _GenldLarge
+    --------------------------------------------------
+       Segment part 14, <CODE> 1
+                      (was CODE)
+       Address:  0xE582 Size: 0xE Align: 2(1)
+       Ref by:   Segment part 13
+                 _GenldLarge
+    --------------------------------------------------
+       Segment part 15, <CODE> 1
+                      (was CODE)
+       Address:  0xE3C2 Size: 0x1E Align: 2(1)
+       Ref by:   _GenldLarge
+    --------------------------------------------------
+       Segment part 28, <CODE> 1
+                      (was CODE)
+       Address:  0xE31E Size: 0x24 Align: 2(1)
+       Ref by:   _PutcharsLarge
+                 _PrintfLarge
+      _PutcharLarge        0xE31E  Loc
+    --------------------------------------------------
+       Segment part 29, <CODE> 1
+                      (was CODE)
+       Address:  0xE2D2 Size: 0x26 Align: 2(1)
+       Ref by:   pad
+                 Segment part 23
+      _PutcharsLarge       0xE2D2  Loc
+    --------------------------------------------------
+       Segment part 21, <CODE> 1
+                      (was CODE)
+       Address:  0xE558 Size: 0xE Align: 2(1)
+       Ref by:   _PrintfLarge
+    --------------------------------------------------
+       Segment part 22, <CODE> 1
+                      (was CODE)
+       Address:  0xE5CC Size: 0xA Align: 2(1)
+       Ref by:   _PrintfLarge
+    --------------------------------------------------
+       Segment part 25, <CODE> 1
+                      (was CODE)
+       Address:  0xE4F2 Size: 0x12 Align: 2(1)
+       Ref by:   _PrintfLarge
+    --------------------------------------------------
+       Segment part 26, <CODE> 1
+                      (was CODE)
+       Address:  0xE14A Size: 0x3E Align: 2(1)
+       Ref by:   _PrintfLarge
+    --------------------------------------------------
+       Segment part 2, DATA16_C
+       Address:  0xC1C9 Size: 0x7 Align: 1(0)
+       Ref by:   _PrintfLarge
+    --------------------------------------------------
+       Segment part 3, DATA16_C
+       Address:  0xC1D0 Size: 0x4 Align: 1(0)
+       Ref by:   _LdtobLarge
+    --------------------------------------------------
+       Segment part 4, DATA16_C
+       Address:  0xC1D4 Size: 0x4 Align: 1(0)
+       Ref by:   _LdtobLarge
+    --------------------------------------------------
+       Segment part 5, DATA16_C
+       Address:  0xC1D8 Size: 0x4 Align: 1(0)
+       Ref by:   _LdtobLarge
+    --------------------------------------------------
+       Segment part 6, DATA16_C
+       Address:  0xC1DC Size: 0x4 Align: 1(0)
+       Ref by:   _LdtobLarge
+    --------------------------------------------------
+       Segment part 7, DATA16_C
+       Address:  0xC1E0 Size: 0x2 Align: 1(0)
+       Ref by:   _GenldLarge
+  ============================================================
+  Module: ?xprout
+       Segment part 2, <CODE> 1
+                      (was CODE)
+       Address:  0xE434 Size: 0x18 Align: 2(1)
+      _Prout               0xE434  Pub  Ref by:   printf (?printf)
+  ============================================================
   Module: ?xxmemxfree
        Segment part 2, <CODE> 1
                       (was CODE)
-       Address:  0xD55E Size: 0x86 Align: 2(1)
-      __data16_free        0xD55E  Pub  Ref by:   __data16_findmem (?xxmemxmalloc)
+       Address:  0xDC7C Size: 0x86 Align: 2(1)
+      __data16_free        0xDC7C  Pub  Ref by:   __data16_findmem (?xxmemxmalloc)
                                                   shake256 (fips202)
                                                   ?Subroutine7 (fips202)
   ============================================================
@@ -961,14 +1102,14 @@ File: C:\Program Files\IAR Systems\Embedded Workbench 9.1\430\lib\dlib\dl430xlmf
     --------------------------------------------------
        Segment part 4, <CODE> 1
                       (was CODE)
-       Address:  0xD882 Size: 0x64 Align: 2(1)
+       Address:  0xDED6 Size: 0x64 Align: 2(1)
        Ref by:   __data16_malloc
-      __data16_findmem     0xD882  Loc
+      __data16_findmem     0xDED6  Loc
     --------------------------------------------------
        Segment part 6, <CODE> 1
                       (was CODE)
-       Address:  0xD658 Size: 0x72 Align: 2(1)
-      __data16_malloc      0xD658  Pub  Ref by:   shake256 (fips202)
+       Address:  0xDDFA Size: 0x72 Align: 2(1)
+      __data16_malloc      0xDDFA  Pub  Ref by:   shake256 (fips202)
                                                   shake128_absorb (fips202)
 
 
@@ -980,33 +1121,32 @@ File: C:\Program Files\IAR Systems\Embedded Workbench 9.1\430\lib\dlib\dl430xlmf
 
   Call Graph Root Category  Max Use  Total Use
   ------------------------  -------  ---------
-  Program entry             12'666     12'666
+  Program entry              8'396      8'396
 
 
 Program entry
-  "__program_start": 0x0000c1c0
+  "__program_start": 0x0000c1e2
 
-  Maximum call chain                            *?* 12'666  bytes
+  Maximum call chain                            *?* 8'396  bytes
     (** call graph contains functions with no stack usage info (example: "asm_keccak1600") **)
 
-    "__program_start"                                    0
-    "main"                                           3'276
-    "PQCLEAN_KYBER512_CLEAN_crypto_kem_dec"            932
-    "PQCLEAN_KYBER512_CLEAN_indcpa_enc"              7'740
-    "PQCLEAN_KYBER512_CLEAN_poly_getnoise_eta1"        200
-    "PQCLEAN_KYBER512_CLEAN_kyber_shake256_prf"         54
-    "shake256"                                         168
-    "keccak_absorb" [fips202]                          296
+    "__program_start"                                   0
+    "main"                                          2'444
+    "PQCLEAN_KYBER512_CLEAN_crypto_kem_keypair"        12
+    "PQCLEAN_KYBER512_CLEAN_indcpa_keypair"         5'222
+    "PQCLEAN_KYBER512_CLEAN_poly_getnoise_eta1"       200
+    "PQCLEAN_KYBER512_CLEAN_kyber_shake256_prf"        54
+    "shake256"                                        168
+    "keccak_absorb" [fips202]                         296
 
 The following functions appear to be called, but have no stack
 usage information:
 
-  "asm_invntt_merging": 0x0002b742
   "asm_keccak1600": 0x00010000
   "asm_ntt_merging": 0x00038644
-  "asm_poly_barrett": 0x0000d274
-  "asm_poly_basemul_kara": 0x0000cab8
-  "asm_poly_tomont": 0x0000d210
+  "asm_poly_barrett": 0x0000da5a
+  "asm_poly_basemul_kara": 0x0000d30e
+  "asm_poly_tomont": 0x0000d9f6
 
 
 
@@ -1027,19 +1167,19 @@ DATA20_Z                    0x2BA6                     rel   2(1)
 DATA20_N                    0x2BA6                     rel   2(1)
 CODE_I                      0x2BA6                     rel   2(1)
 CSTACK                  0x5D80 - 0x9BFF       0x3E80   rel   2(1)
-DATA16_C                0xC000 - 0xC1BF        0x1C0   rel   2(1)
-CSTART                  0xC1C0 - 0xC1D7         0x18   rel   2(1)
-<CODE> 1                0xC1D8 - 0xDD1F       0x1B48   rel   2(1)
-CODE_ID                     0xDD20                     rel   2(1)
-DATA20_ID                   0xDD20                     rel   2(1)
-DATA20_C                    0xDD20                     rel   2(1)
+DATA16_C                0xC000 - 0xC1E1        0x1E2   rel   2(1)
+CSTART                  0xC1E2 - 0xC1F9         0x18   rel   2(1)
+<CODE> 1                0xC1FA - 0xE5F9       0x2400   rel   2(1)
+CODE_ID                     0xE5FA                     rel   2(1)
+DATA20_ID                   0xE5FA                     rel   2(1)
+DATA20_C                    0xE5FA                     rel   2(1)
 RESET                   0xFFFE - 0xFFFF          0x2   rel   2(1)
 <CODE> 2            0x00010000 - 0x0003DD0D  0x2DD0E   rel   2(1)
 DATA16_AN               0x015C - 0x015D          0x2   abs   1(0)
 
- 194'672 bytes of CODE  memory
+ 196'904 bytes of CODE  memory
   20'006 bytes of DATA  memory (+ 2 absolute )
-     448 bytes of CONST memory
+     482 bytes of CONST memory
 
 Errors: none
 Warnings: 1
