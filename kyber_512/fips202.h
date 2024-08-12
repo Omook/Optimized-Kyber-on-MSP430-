@@ -14,7 +14,8 @@
 #define PQC_SHAKEINCCTX_BYTES (sizeof(uint64_t)*26)
 #define PQC_SHAKECTX_BYTES (sizeof(uint64_t)*25)
 
-extern void asm_keccak1600(uint64_t* state, const uint64_t* round_count);
+//extern void asm_keccak1600(uint64_t* state);
+extern void asm_keccak1600(uint64_t* state, uint64_t* t, uint64_t* d);
 
 // Context for incremental API
 typedef struct {

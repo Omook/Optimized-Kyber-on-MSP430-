@@ -7,6 +7,8 @@
 #define         mul_res_hi      r14
 #define         forstop         r15
 
+
+         
 mont      macro   mul_low, mul_hi
                                                      
         
@@ -40,7 +42,7 @@ mont2      macro   mul_low, mul_hi
 first_butter_fly      macro   src1, src2, zeta, off
 
          mov    zeta, &MPYS ; zetas[1]
-         mov    off(ptr), &OP2      
+         mov    off(ptr), &OP2       
          
          mov    &RESLO, mul_res_lo
          mov    &RESHI, mul_res_hi       ; zetas * arr[128]****************
@@ -177,7 +179,9 @@ asm_ntt_merging:
          push r9
          push r10
          push r11            
-
+         
+         
+         
          mov    ptr, forstop
          add    #128, forstop
          

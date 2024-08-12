@@ -145,9 +145,7 @@ loop_barrett:
           pop    r7
           pop    r6
           pop    r5
-          pop    r4
-
-     
+          pop    r4     
          
          RETA
                  

@@ -9,7 +9,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <stdio.h>
 #include "fips202.h"
 
 #define NROUNDS 24
@@ -349,8 +349,9 @@ static void KeccakF1600_StatePermute(uint64_t *state) {
 static void keccak_absorb(uint64_t *s, uint32_t r, const uint8_t *m,
                           size_t mlen, uint8_t p) {
     size_t i;
-    uint8_t t[200];
-
+    uint8_t t[200];   
+    uint64_t temp[25];   
+    uint64_t d[5];       
     /* Zero state */
     for (i = 0; i < 25; ++i) {
         s[i] = 0;
@@ -362,7 +363,8 @@ static void keccak_absorb(uint64_t *s, uint32_t r, const uint8_t *m,
         }
 
         //KeccakF1600_StatePermute(s);
-        asm_keccak1600(s, KeccakF_RoundConstants);
+        asm_keccak1600(s, temp, d);     
+        //68113 -> 66961
         mlen -= r;
         m += r;
     }
@@ -394,10 +396,12 @@ static void keccak_absorb(uint64_t *s, uint32_t r, const uint8_t *m,
  *              - uint32_t r: rate in bytes (e.g., 168 for SHAKE128)
  **************************************************/
 static void keccak_squeezeblocks(uint8_t *h, size_t nblocks,
-                                 uint64_t *s, uint32_t r) {
+                                 uint64_t *s, uint32_t r) {    
+    uint64_t temp[25];
+    uint64_t d[5];
     while (nblocks > 0) {
         //KeccakF1600_StatePermute(s);
-        asm_keccak1600(s, KeccakF_RoundConstants);
+        asm_keccak1600(s, temp, d);
         for (size_t i = 0; i < (r >> 3); i++) {
             store64(h + 8 * i, s[i]);
         }
@@ -442,7 +446,8 @@ static void keccak_inc_init(uint64_t *s_inc) {
 static void keccak_inc_absorb(uint64_t *s_inc, uint32_t r, const uint8_t *m,
                               size_t mlen) {
     size_t i;
-
+    uint64_t temp[25];
+    uint64_t d[5];
     /* Recall that s_inc[25] is the non-absorbed bytes xored into the state */
     while (mlen + s_inc[25] >= r) {
         for (i = 0; i < r - (uint32_t)s_inc[25]; i++) {
@@ -455,7 +460,7 @@ static void keccak_inc_absorb(uint64_t *s_inc, uint32_t r, const uint8_t *m,
         s_inc[25] = 0;
 
         //KeccakF1600_StatePermute(s_inc);
-        asm_keccak1600(s_inc, KeccakF_RoundConstants);
+        asm_keccak1600(s_inc, temp, d);
     }
 
     for (i = 0; i < mlen; i++) {
@@ -501,7 +506,8 @@ static void keccak_inc_finalize(uint64_t *s_inc, uint32_t r, uint8_t p) {
 static void keccak_inc_squeeze(uint8_t *h, size_t outlen,
                                uint64_t *s_inc, uint32_t r) {
     size_t i;
-
+    uint64_t temp[25];
+    uint64_t d[5];
     /* First consume any bytes we still have sitting around */
     for (i = 0; i < outlen && i < s_inc[25]; i++) {
         /* There are s_inc[25] bytes left, so r - s_inc[25] is the first
@@ -515,7 +521,7 @@ static void keccak_inc_squeeze(uint8_t *h, size_t outlen,
     /* Then squeeze the remaining necessary blocks */
     while (outlen > 0) {
         //KeccakF1600_StatePermute(s_inc);
-        asm_keccak1600(s_inc, KeccakF_RoundConstants);
+        asm_keccak1600(s_inc, temp, d);
 
         for (i = 0; i < outlen && i < r; i++) {
             h[i] = (uint8_t)(s_inc[i >> 3] >> (8 * (i & 0x07)));

@@ -23,6 +23,9 @@ RSEG CODE              ; place program in 'CODE' segment
 
 #define         ptr     r12
 #define         ptr_RC        r13
+
+#define         ptr_t        r14
+#define         ptr_d        r15
          
 
 
@@ -61,26 +64,14 @@ push_theta      macro w4, w3, w2, w1
 pop_theta      macro off1, off2, off3, off4, off5, src
      
           pop temp
-         mov off1(ptr), src     
-         xor temp, src
-         mov src, off1(ptr)
          
-         mov off2(ptr), src
-         xor temp, src
-         mov src, off2(ptr)
-         
-         mov off3(ptr), src
-         xor temp, src
-         mov src, off3(ptr)
-         
-         mov off4(ptr), src
-         xor temp, src
-         mov src, off4(ptr)
-         
-         mov off5(ptr), src
-         xor temp, src
-         mov src, off5(ptr)         
+         xor temp, off1(ptr)
+         xor temp, off2(ptr)
+         xor temp, off3(ptr)
+         xor temp, off4(ptr)
+         xor temp, off5(ptr)
 
+         
          endm
          
          
@@ -144,12 +135,22 @@ theta     macro             ;high: w4, low: w1
          last_theta 0, 40, 80, 120, 160, 2, 42, 82, 122, 162, 4, 44, 84, 124, 164, 6, 46, 86, 126, 166  ;Da
          endm
 
+
 ld64      macro off1, off2, off3, off4, w1,w2,w3,w4        ;high: w4, low: w1 
 
          mov  off1(ptr), w1
          mov  off2(ptr), w2
          mov  off3(ptr), w3
          mov  off4(ptr), w4
+         
+         endm
+         
+new_ld64      macro w1,w2,w3,w4        ;high: w4, low: w1 
+
+         mov  @ptr_t+, w1
+         mov  @ptr_t+, w2
+         mov  @ptr_t+, w3
+         mov  @ptr_t+, w4
          
          endm
          
@@ -213,7 +214,10 @@ rho_phi      macro
 
          right_rotate8  element2, element1, element4, element3
          left_rotate1   element2, element1, element4, element3        
-         ld64   96, 98, 100, 102, temp1, temp2, temp3, temp4
+         mov    ptr, ptr_t
+         add    #96, ptr_t
+         new_ld64   temp1, temp2, temp3, temp4         
+         ;ld64   96, 98, 100, 102, temp1, temp2, temp3, temp4
          st64   96, 98, 100, 102, element2, element1, element4, element3
          
          
@@ -223,26 +227,34 @@ rho_phi      macro
          right_rotate1  temp1, temp4, temp3, temp2
          right_rotate1  temp1, temp4, temp3, temp2
          right_rotate1  temp1, temp4, temp3, temp2
-         ld64   16, 18, 20, 22, element1,  element2,  element3,  element4
+         sub    #88, ptr_t    
+         new_ld64   element1,  element2,  element3,  element4
+         ;ld64   16, 18, 20, 22, element1,  element2,  element3,  element4
          st64   16, 18, 20, 22, temp1, temp4, temp3, temp2
          
          ;rol62, element        bi
          right_rotate1  element4,  element3,  element2,  element1
          right_rotate1  element4,  element3,  element2,  element1
-         ld64   160, 162, 164, 166, temp1, temp2, temp3, temp4
+         add    #136, ptr_t
+         new_ld64   temp1, temp2, temp3, temp4
+         ;ld64   160, 162, 164, 166, temp1, temp2, temp3, temp4
          st64   160, 162, 164, 166, element4,  element3,  element2,  element1
          
          
          ;rol18 temp            sa
          left_rotate1   temp3, temp2, temp1, temp4
          left_rotate1   temp3, temp2, temp1, temp4
-         ld64   112, 114, 116, 118, element1,  element2,  element3,  element4
+         sub    #56, ptr_t
+         new_ld64   element1,  element2,  element3,  element4
+         ;ld64   112, 114, 116, 118, element1,  element2,  element3,  element4
          st64   112, 114, 116, 118, temp3, temp2, temp1, temp4
          
          ;rol39, element        ku
          right_rotate8  element1,  element4,  element3,  element2
-         right_rotate1  element1,  element4,  element3,  element2         
-         ld64   176, 178, 180, 182, temp1, temp2, temp3, temp4
+         right_rotate1  element1,  element4,  element3,  element2 
+         add    #56, ptr_t
+         new_ld64   temp1, temp2, temp3, temp4
+         ;ld64   176, 178, 180, 182, temp1, temp2, temp3, temp4
          st64   176, 178, 180, 182, element1,  element4,  element3,  element2
          
          
@@ -250,7 +262,9 @@ rho_phi      macro
          right_rotate1  temp4, temp3, temp2, temp1
          right_rotate1  temp4, temp3, temp2, temp1
          right_rotate1  temp4, temp3, temp2, temp1
-         ld64   72, 74, 76, 78, element1,  element2,  element3,  element4
+         sub    #112, ptr_t
+         new_ld64   element1,  element2,  element3,  element4
+         ;ld64   72, 74, 76, 78, element1,  element2,  element3,  element4
          st64   72, 74, 76, 78, temp4, temp3, temp2, temp1
          
          ;rol20, element        gu
@@ -258,7 +272,9 @@ rho_phi      macro
          left_rotate1   element3, element2, element1, element4
          left_rotate1   element3, element2, element1, element4
          left_rotate1   element3, element2, element1, element4
-         ld64   48, 50, 52, 54, temp1, temp2, temp3, temp4
+         sub    #32, ptr_t
+         new_ld64   temp1, temp2, temp3, temp4
+         ;ld64   48, 50, 52, 54, temp1, temp2, temp3, temp4
          st64   48, 50, 52, 54, element3, element2, element1, element4
          
          
@@ -267,14 +283,18 @@ rho_phi      macro
          right_rotate1  temp1, temp4, temp3, temp2
          right_rotate1  temp1, temp4, temp3, temp2
          right_rotate1  temp1, temp4, temp3, temp2
-         ld64   8, 10, 12, 14, element1,  element2,  element3,  element4
+         sub    #48, ptr_t
+         new_ld64   element1,  element2,  element3,  element4
+         ;ld64   8, 10, 12, 14, element1,  element2,  element3,  element4
          st64   8, 10, 12, 14, temp1, temp4, temp3, temp2
          
          
          
          ;rol1, element        be
          left_rotate1  element4, element3, element2, element1
-         ld64   80, 82, 84, 86, temp1, temp2, temp3, temp4
+         add    #64, ptr_t
+         new_ld64   temp1, temp2, temp3, temp4
+         ;ld64   80, 82, 84, 86, temp1, temp2, temp3, temp4
          st64   80, 82, 84, 86, element4, element3, element2, element1
          
          
@@ -282,7 +302,9 @@ rho_phi      macro
          left_rotate1  temp4, temp3, temp2, temp1 
          left_rotate1  temp4, temp3, temp2, temp1 
          left_rotate1  temp4, temp3, temp2, temp1 
-         ld64   56, 58, 60, 62, element1,  element2,  element3,  element4
+         sub    #32, ptr_t
+         new_ld64   element1,  element2,  element3,  element4
+         ;ld64   56, 58, 60, 62, element1,  element2,  element3,  element4
          st64   56, 58, 60, 62, temp4, temp3, temp2, temp1
          
          ;rol6, element       gi 
@@ -292,7 +314,9 @@ rho_phi      macro
          left_rotate1  element4, element3, element2, element1 
          left_rotate1  element4, element3, element2, element1 
          left_rotate1  element4, element3, element2, element1 
-         ld64   88, 90, 92, 94, temp1, temp2, temp3, temp4
+         add    #24, ptr_t
+         new_ld64   temp1, temp2, temp3, temp4
+         ;ld64   88, 90, 92, 94, temp1, temp2, temp3, temp4
          st64   88, 90, 92, 94, element4, element3, element2, element1
          
          
@@ -303,12 +327,15 @@ rho_phi      macro
          right_rotate1  temp3, temp2, temp1, temp4
          right_rotate1  temp3, temp2, temp1, temp4
          right_rotate1  temp3, temp2, temp1, temp4
-         ld64   136, 138, 140, 142, element1,  element2,  element3,  element4
+         add    #40, ptr_t
+         new_ld64   element1,  element2,  element3,  element4
+         ;ld64   136, 138, 140, 142, element1,  element2,  element3,  element4
          st64   136, 138, 140, 142, temp3, temp2, temp1, temp4
          
          ;rol15, element       mi
-         right_rotate1  element3, element2, element1, element4
-         ld64   144, 146, 148, 150, temp1, temp2, temp3, temp4
+         right_rotate1  element3, element2, element1, element4         
+         new_ld64   temp1, temp2, temp3, temp4
+         ;ld64   144, 146, 148, 150, temp1, temp2, temp3, temp4
          st64   144, 146, 148, 150, element3, element2, element1, element4
          
          
@@ -318,7 +345,9 @@ rho_phi      macro
          left_rotate1  temp3, temp2, temp1, temp4
          left_rotate1  temp3, temp2, temp1, temp4
          left_rotate1  temp3, temp2, temp1, temp4
-         ld64   24, 26, 28, 30, element1,  element2,  element3,  element4
+         sub    #128, ptr_t
+         new_ld64   element1,  element2,  element3,  element4
+         ;ld64   24, 26, 28, 30, element1,  element2,  element3,  element4
          st64   24, 26, 28, 30, temp3, temp2, temp1, temp4
          
          ;rol28, element       bo
@@ -326,7 +355,9 @@ rho_phi      macro
          right_rotate1  element2, element1, element4, element3
          right_rotate1  element2, element1, element4, element3
          right_rotate1  element2, element1, element4, element3
-         ld64   40, 42, 44, 46, temp1, temp2, temp3, temp4
+         add    #8, ptr_t
+         new_ld64   temp1, temp2, temp3, temp4
+         ;ld64   40, 42, 44, 46, temp1, temp2, temp3, temp4
          st64   40, 42, 44, 46, element2, element1, element4, element3
          
          
@@ -335,34 +366,44 @@ rho_phi      macro
          left_rotate1   temp2, temp1, temp4, temp3
          left_rotate1   temp2, temp1, temp4, temp3
          left_rotate1   temp2, temp1, temp4, temp3
-         ld64   128, 130, 132, 134, element1,  element2,  element3,  element4
+         add    #80, ptr_t
+         new_ld64   element1,  element2,  element3,  element4
+         ;ld64   128, 130, 132, 134, element1,  element2,  element3,  element4
          st64   128, 130, 132, 134, temp2, temp1, temp4, temp3
          
          ;rol45, element       me
          right_rotate1  element1, element4, element3, element2
          right_rotate1  element1, element4, element3, element2
          right_rotate1  element1, element4, element3, element2
-         ld64   64, 66, 68, 70, temp1, temp2, temp3, temp4
+         sub    #72, ptr_t
+         new_ld64   temp1, temp2, temp3, temp4
+         ;ld64   64, 66, 68, 70, temp1, temp2, temp3, temp4
          st64   64, 66, 68, 70, element1, element4, element3, element2
          
          
          ;rol55 temp            go
          right_rotate8  temp4, temp3, temp2, temp1
          right_rotate1  temp4, temp3, temp2, temp1
-         ld64   168, 170, 172, 174, element1,  element2,  element3,  element4
+         add    #96, ptr_t
+         new_ld64   element1,  element2,  element3,  element4
+         ;ld64   168, 170, 172, 174, element1,  element2,  element3,  element4
          st64   168, 170, 172, 174, temp4, temp3, temp2, temp1
          
          ;rol2, element       se
          left_rotate1   element4, element3, element2, element1
          left_rotate1   element4, element3, element2, element1
-         ld64   192, 194, 196, 198, temp1, temp2, temp3, temp4
+         add    #16, ptr_t
+         new_ld64   temp1, temp2, temp3, temp4
+         ;ld64   192, 194, 196, 198, temp1, temp2, temp3, temp4
          st64   192, 194, 196, 198, element4, element3, element2, element1
          
          
          ;rol14  temp            su
          right_rotate1  temp3, temp2, temp1, temp4
          right_rotate1  temp3, temp2, temp1, temp4
-         ld64   32, 34, 36, 38, element1,  element2,  element3,  element4
+         sub    #168, ptr_t
+         new_ld64   element1,  element2,  element3,  element4
+         ;ld64   32, 34, 36, 38, element1,  element2,  element3,  element4
          st64   32, 34, 36, 38, temp3, temp2, temp1, temp4
          
          ;rol27, element       bu
@@ -370,19 +411,25 @@ rho_phi      macro
          left_rotate1  element2, element1, element4, element3
          left_rotate1  element2, element1, element4, element3
          left_rotate1  element2, element1, element4, element3
-         ld64   120, 122, 124, 126, temp1, temp2, temp3, temp4
+         add    #80, ptr_t
+         new_ld64   temp1, temp2, temp3, temp4
+         ;ld64   120, 122, 124, 126, temp1, temp2, temp3, temp4
          st64   120, 122, 124, 126, element2, element1, element4, element3
          
          
          ;rol41 temp            ma
          right_rotate8  temp1, temp4, temp3, temp2
          left_rotate1  temp1, temp4, temp3, temp2
-         ld64   184, 186, 188, 190, element1,  element2,  element3,  element4
+         add    #56, ptr_t
+         new_ld64   element1,  element2,  element3,  element4
+         ;ld64   184, 186, 188, 190, element1,  element2,  element3,  element4
          st64   184, 186, 188, 190, temp1, temp4, temp3, temp2
          
          ;rol56, element       so
          right_rotate8  element4, element3, element2, element1
-         ld64   152, 154, 156, 158, temp1, temp2, temp3, temp4
+         sub    #40, ptr_t
+         new_ld64   temp1, temp2, temp3, temp4
+         ;ld64   152, 154, 156, 158, temp1, temp2, temp3, temp4
          st64   152, 154, 156, 158, element4, element3, element2, element1
          
          
@@ -432,7 +479,7 @@ chi      macro off1, off2, off3, off4, off5
                          
          endm
 
-first_chi      macro off1, off2, off3, off4, off5
+first_chi      macro off1, off2, off3, off4, off5, rc          
 ;BIC(.B) src,dst .not.src .and. dst ¡æ dst
 
 
@@ -451,7 +498,7 @@ first_chi      macro off1, off2, off3, off4, off5
          
          bic    temp2, temp3
          xor    temp1, temp3
-         xor    @ptr_RC+, temp3
+         xor    rc, temp3
          mov    temp3, off1(ptr)
          
          bic    element3, temp4
@@ -468,16 +515,16 @@ first_chi      macro off1, off2, off3, off4, off5
          
          bic    element1, temp2
          xor    temp, temp2
-         mov    temp2, off5(ptr)                  
+         mov    temp2, off5(ptr)
                          
          endm
          
-chi_lota      macro             ;high: w4, low: w1  
+chi_lota      macro rc1, rc2, rc3, rc4            ;high: w4, low: w1  
 
-         first_chi 0, 8, 16, 24, 32
-         first_chi 2, 10, 18, 26, 34
-         first_chi 4, 12, 20, 28, 36
-         first_chi 6, 14, 22, 30, 38
+         first_chi 0, 8, 16, 24, 32, rc1
+         first_chi 2, 10, 18, 26, 34, rc2
+         first_chi 4, 12, 20, 28, 36, rc3
+         first_chi 6, 14, 22, 30, 38, rc4
          
          chi 40, 48, 56, 64, 72
          chi 42, 50, 58, 66, 74
@@ -500,8 +547,7 @@ chi_lota      macro             ;high: w4, low: w1
          chi 166, 174, 182, 190, 198
          
          
-         endm   
-         
+         endm 
 
          
 asm_keccak1600:
@@ -514,103 +560,104 @@ asm_keccak1600:
          push r9
          push r10
          push r11
-       
+                 
+         
 loop:                      
-         theta
+        theta
          rho_phi
-         chi_lota
+         chi_lota #1, #0, #0, #0
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x8082, #0, #0, #0
+    
+         theta
+         rho_phi
+         chi_lota #0x808a, #0x00, #0x00, #0x8000
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x8000, #0x8000, #0x00, #0x8000
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x808b, #0x00, #0x00, #0x00
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x0001, #0x8000, #0x00, #0x00
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x8081, #0x8000, #0x00, #0x8000
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x8009, #0x00, #0x00, #0x8000
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x008a, #0x00, #0x00, #0x00
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x0088, #0x00, #0x00, #0x00
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x8009, #0x8000, #0x00, #0x00
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x000a, #0x8000, #0x00, #0x00
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x808b, #0x8000, #0x00, #0x00
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x008b, #0x00, #0x00, #0x8000
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x8089, #0x00, #0x00, #0x8000
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x8003, #0x00, #0x00, #0x8000
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x8002, #0x00, #0x00, #0x8000
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x0080, #0x00, #0x00, #0x8000
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x800a, #0x00, #0x00, #0x00
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x000a, #0x8000, #0x00, #0x8000
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x8081, #0x8000, #0x00, #0x8000
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x8080, #0x00, #0x00, #0x8000
          
          theta
          rho_phi
-         chi_lota
+         chi_lota #0x0001, #0x8000, #0x00, #0x00
          
          theta
          rho_phi
-         chi_lota
-         
-         theta
-         rho_phi
-         chi_lota
+         chi_lota #0x8008, #0x8000, #0x00, #0x8000
          
          pop    r11
          pop    r10

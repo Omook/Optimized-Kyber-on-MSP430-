@@ -2645,9 +2645,6 @@
         <name>$PROJ_DIR$\asm_reduce_kyber.s43</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\asm_sha3.s43</name>
-    </file>
-    <file>
         <name>$PROJ_DIR$\cbd.c</name>
     </file>
     <file>
@@ -2673,6 +2670,9 @@
     </file>
     <file>
         <name>$PROJ_DIR$\main.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\new_asm_sha3.s43</name>
     </file>
     <file>
         <name>$PROJ_DIR$\ntt.c</name>

@@ -1,315 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     <fileVersion>5</fileVersion>
-    <fileChecksum>4094732179</fileChecksum>
+    <fileChecksum>4153185946</fileChecksum>
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\asm_sha3.s43</file>
-            <file>$PROJ_DIR$\cbd.c</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
-            <file>$PROJ_DIR$\verify.h</file>
-            <file>$PROJ_DIR$\cbd.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\asm_sha3.r43</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
-            <file>$PROJ_DIR$\params.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\asm_mont.r43</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
-            <file>$PROJ_DIR$\poly.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
-            <file>$PROJ_DIR$\polyvec.c</file>
-            <file>$PROJ_DIR$\ntt.h</file>
-            <file>$PROJ_DIR$\fips202.h</file>
-            <file>$PROJ_DIR$\verify.c</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
-            <file>$PROJ_DIR$\asm_basemul.s43</file>
-            <file>$PROJ_DIR$\Debug\List\first_kyber.call_graph.cgx</file>
-            <file>$PROJ_DIR$\Debug\Obj\cbd.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\kem.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\fips202.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\verify.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
-            <file>$PROJ_DIR$\indcpa.c</file>
-            <file>$PROJ_DIR$\Debug\Exe\first_kyber.d43</file>
-            <file>$PROJ_DIR$\symmetric.h</file>
-            <file>$TOOLKIT_DIR$\inc\msp430.h</file>
-            <file>$PROJ_DIR$\fips202.c</file>
-            <file>$PROJ_DIR$\ntt.c</file>
-            <file>$PROJ_DIR$\Debug\Obj\asm_basemul_kyber512.r43</file>
-            <file>$PROJ_DIR$\kem.c</file>
-            <file>$PROJ_DIR$\Debug\Obj\indcpa.r43</file>
-            <file>$PROJ_DIR$\kem.h</file>
-            <file>$PROJ_DIR$\main.c</file>
-            <file>$PROJ_DIR$\symmetric-shake.c</file>
-            <file>$PROJ_DIR$\indcpa.h</file>
-            <file>$PROJ_DIR$\reduce.c</file>
-            <file>$TOOLKIT_DIR$\inc\msp430f6779a.h</file>
-            <file>$PROJ_DIR$\poly.c</file>
-            <file>$PROJ_DIR$\reduce.h</file>
-            <file>$TOOLKIT_DIR$\inc\io430.h</file>
-            <file>$PROJ_DIR$\polyvec.h</file>
-            <file>$PROJ_DIR$\asm_INTT_Kyber.s43</file>
-            <file>$PROJ_DIR$\api.h</file>
-            <file>$PROJ_DIR$\asm_basemul_kyber.s43</file>
-            <file>$PROJ_DIR$\asm_NTT_Kyber.s43</file>
-            <file>$PROJ_DIR$\asm_reduce_kyber.s43</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\stdlib.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\stdint.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
-            <file>$PROJ_DIR$\Debug\Exe\first_kyber.ulp</file>
-            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
-            <file>$TOOLKIT_DIR$\lib\dlib\dl430xlmfn.h</file>
-            <file>$TOOLKIT_DIR$\lib\dlib\dl430xlmfn.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\poly.r43</file>
-            <file>$TOOLKIT_DIR$\config\linker\lnk430f6779a.xcl</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
-            <file>$PROJ_DIR$\Debug\List\first_kyber.map</file>
-            <file>$PROJ_DIR$\asm_basemul_kyber512.s43</file>
-            <file>$PROJ_DIR$\Debug\Obj\ntt.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\reduce.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\asm_NTT.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\symmetric-shake.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\polyvec.r43</file>
-            <file>$PROJ_DIR$\asm_NTT.s43</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\string.h</file>
             <file>$TOOLKIT_DIR$\inc\dlib\c\stddef.h</file>
+            <file>$PROJ_DIR$\asm_NTT.s43</file>
+            <file>$PROJ_DIR$\Debug\Obj\symmetric-shake.r43</file>
+            <file>$TOOLKIT_DIR$\config\linker\lnk430f6779a.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\verify.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\fips202.r43</file>
+            <file>$TOOLKIT_DIR$\inc\io430.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\cbd.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
             <file>$PROJ_DIR$\Debug\Obj\asm_NTT_Kyber.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\asm_reduce_kyber.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\asm_basemul_kyber.r43</file>
-            <file>$TOOLKIT_DIR$\inc\io430f6779a.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\indcpa.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\string.h</file>
             <file>$PROJ_DIR$\Debug\Obj\asm_INTT_Kyber.r43</file>
-            <file>$PROJ_DIR$\asm_mont.s43</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+            <file>$TOOLKIT_DIR$\inc\io430f6779a.h</file>
+            <file>$PROJ_DIR$\asm_basemul_kyber512.s43</file>
+            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+            <file>$PROJ_DIR$\asm_sha3.s43</file>
+            <file>$TOOLKIT_DIR$\lib\dlib\dl430xlmfn.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\reduce.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\polyvec.r43</file>
+            <file>$TOOLKIT_DIR$\lib\dlib\dl430xlmfn.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\asm_reduce_kyber.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\asm_mont.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\stdint.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\kem.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
             <file>$PROJ_DIR$\Debug\Obj\asm_basemul.r43</file>
+            <file>$TOOLKIT_DIR$\inc\msp430.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\asm_basemul_kyber.r43</file>
+            <file>$PROJ_DIR$\Debug\List\first_kyber.map</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+            <file>$PROJ_DIR$\Debug\Exe\first_kyber.d43</file>
+            <file>$PROJ_DIR$\Debug\Obj\asm_sha3.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\poly.r43</file>
+            <file>$PROJ_DIR$\Debug\List\first_kyber.call_graph.cgx</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\asm_NTT.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\kem.h</file>
+            <file>$PROJ_DIR$\cbd.h</file>
+            <file>$PROJ_DIR$\ntt.h</file>
+            <file>$PROJ_DIR$\poly.c</file>
+            <file>$PROJ_DIR$\new_asm_sha3.s43</file>
+            <file>$PROJ_DIR$\reduce.h</file>
+            <file>$PROJ_DIR$\symmetric.h</file>
+            <file>$PROJ_DIR$\indcpa.c</file>
+            <file>$PROJ_DIR$\fips202.h</file>
+            <file>$PROJ_DIR$\verify.h</file>
+            <file>$PROJ_DIR$\asm_INTT_Kyber.s43</file>
+            <file>$PROJ_DIR$\fips202.c</file>
+            <file>$PROJ_DIR$\main.c</file>
+            <file>$PROJ_DIR$\asm_NTT_Kyber.s43</file>
+            <file>$PROJ_DIR$\ntt.c</file>
+            <file>$PROJ_DIR$\indcpa.h</file>
+            <file>$PROJ_DIR$\asm_reduce_kyber.s43</file>
+            <file>$PROJ_DIR$\polyvec.h</file>
+            <file>$PROJ_DIR$\reduce.c</file>
+            <file>$PROJ_DIR$\asm_basemul_kyber.s43</file>
+            <file>$PROJ_DIR$\params.h</file>
+            <file>$PROJ_DIR$\symmetric-shake.c</file>
+            <file>$PROJ_DIR$\verify.c</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\Debug\Exe\first_kyber.ulp</file>
+            <file>$PROJ_DIR$\asm_basemul.s43</file>
+            <file>$TOOLKIT_DIR$\inc\msp430f6779a.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\ntt.r43</file>
+            <file>$PROJ_DIR$\poly.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\asm_basemul_kyber512.r43</file>
+            <file>$PROJ_DIR$\asm_mont.s43</file>
+            <file>$PROJ_DIR$\cbd.c</file>
+            <file>$PROJ_DIR$\api.h</file>
+            <file>$PROJ_DIR$\kem.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\new_asm_sha3.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\stdlib.h</file>
+            <file>$PROJ_DIR$\polyvec.c</file>
         </outputs>
         <file>
-            <name>$PROJ_DIR$\asm_sha3.s43</name>
+            <name>$PROJ_DIR$\asm_NTT.s43</name>
             <outputs>
                 <tool>
                     <name>A430</name>
-                    <file> 5</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 27 38</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\cbd.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 19</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 4 7 10 49 58 2 53 54 50 11 6</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\polyvec.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 65</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 7 10 49 58 2 53 54 50 11 6 42</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\verify.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 22</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 3 7 68 58 2 53 54 50 11 6 9 49</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\asm_basemul.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 76</file>
+                    <file> 40</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>A430</name>
-                    <file> 27 38</file>
+                    <file> 27 68</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\indcpa.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 32</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 36 7 42 10 49 58 2 53 54 50 11 6 13 26 14 68 9</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\Debug\Exe\first_kyber.d43</name>
-            <outputs>
-                <tool>
-                    <name>XLINK</name>
-                    <file> 18 59</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>XLINK</name>
-                    <file> 57 71 73 69 70 5 19 21 32 20 23 61 56 65 62 64 22 55</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\fips202.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 21</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 68 58 2 53 54 50 11 6 9 49 48 67 14</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\ntt.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 61</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 13 7 49 58 2 53 54 50 11 6 40</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\kem.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 20</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 36 7 42 10 49 58 2 53 54 50 11 6 33 26 14 68 9 3</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\main.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 23</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 41 72 52 33 7 49 58 2 53 54 50 11 6 13 10 42 26 14 68 9 75 16</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\symmetric-shake.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 64</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 14 68 58 2 53 54 50 11 6 9 49 7 26 67</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\reduce.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 62</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 7 40 49 58 2 53 54 50 11 6</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\poly.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 56</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 4 7 10 49 58 2 53 54 50 11 6 13 40 26 14 68 9</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\asm_INTT_Kyber.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 73</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 27 38</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\asm_basemul_kyber.s43</name>
+            <name>$PROJ_DIR$\asm_basemul_kyber512.s43</name>
             <outputs>
                 <tool>
                     <name>A430</name>
@@ -319,7 +111,127 @@
             <inputs>
                 <tool>
                     <name>A430</name>
-                    <file> 27 38</file>
+                    <file> 27 68</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\asm_sha3.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 32</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 27 68</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\first_kyber.d43</name>
+            <outputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 37 29</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 3 28 12 9 21 7 5 10 24 35 76 69 36 19 18 2 4 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\poly.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 36</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 43 62 70 23 30 25 65 17 41 8 38 44 47 48 50 0 33</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\new_asm_sha3.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 76</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 27 68</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\indcpa.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 10</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 57 62 59 70 23 30 25 65 17 41 8 38 44 48 50 0 33</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\asm_INTT_Kyber.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 12</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 27 68</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\fips202.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 5</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 0 30 25 65 17 41 8 38 33 23 77 11 39 34 50</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 35</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 6 13 15 42 62 23 30 25 65 17 41 8 38 44 70 59 48 50 0 33 39 34</file>
                 </tool>
             </inputs>
         </file>
@@ -328,13 +240,28 @@
             <outputs>
                 <tool>
                     <name>A430</name>
-                    <file> 69</file>
+                    <file> 9</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>A430</name>
-                    <file> 27 38</file>
+                    <file> 27 68</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\ntt.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 69</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 44 62 23 30 25 65 17 41 8 38 47</file>
                 </tool>
             </inputs>
         </file>
@@ -343,56 +270,88 @@
             <outputs>
                 <tool>
                     <name>A430</name>
-                    <file> 70</file>
+                    <file> 21</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>A430</name>
-                    <file> 27 38</file>
+                    <file> 27 68</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>[ROOT_NODE]</name>
+            <name>$PROJ_DIR$\reduce.c</name>
             <outputs>
                 <tool>
-                    <name>XLINK</name>
-                    <file> 18 59 25</file>
-                </tool>
-                <tool>
-                    <name>ULP430</name>
-                    <file> 51</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\asm_basemul_kyber512.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 30</file>
+                    <name>ICC430</name>
+                    <file> 18</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
-                    <name>A430</name>
-                    <file> 27 38</file>
+                    <name>ICC430</name>
+                    <file> 62 47 23 30 25 65 17 41 8 38</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\asm_NTT.s43</name>
+            <name>$PROJ_DIR$\asm_basemul_kyber.s43</name>
             <outputs>
                 <tool>
                     <name>A430</name>
-                    <file> 63</file>
+                    <file> 28</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>A430</name>
-                    <file> 27 38</file>
+                    <file> 27 68</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\symmetric-shake.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 2</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 50 0 30 25 65 17 41 8 38 33 23 62 48 11</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\verify.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 4</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 51 62 0 30 25 65 17 41 8 38 33 23</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\asm_basemul.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 26</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 27 68</file>
                 </tool>
             </inputs>
         </file>
@@ -401,30 +360,76 @@
             <outputs>
                 <tool>
                     <name>A430</name>
-                    <file> 8</file>
+                    <file> 22</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>A430</name>
-                    <file> 27 38</file>
+                    <file> 27 68</file>
                 </tool>
             </inputs>
         </file>
-        <forcedrebuild>
-            <name>[MULTI_TOOL]</name>
-            <tool>XLINK</tool>
-        </forcedrebuild>
-        <forcedrebuild>
+        <file>
             <name>$PROJ_DIR$\cbd.c</name>
-            <tool>ICC430</tool>
-        </forcedrebuild>
-        <forcedrebuild>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 7</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 43 62 70 23 30 25 65 17 41 8 38</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\kem.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 24</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 57 62 59 70 23 30 25 65 17 41 8 38 42 48 50 0 33 51</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
             <name>$PROJ_DIR$\polyvec.c</name>
-            <tool>ICC430</tool>
-        </forcedrebuild>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 19</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 62 70 23 30 25 65 17 41 8 38 59</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 37 29 31</file>
+                </tool>
+                <tool>
+                    <name>ULP430</name>
+                    <file> 66</file>
+                </tool>
+            </outputs>
+        </file>
         <forcedrebuild>
-            <name>$PROJ_DIR$\verify.c</name>
+            <name>$PROJ_DIR$\poly.c</name>
             <tool>ICC430</tool>
         </forcedrebuild>
         <forcedrebuild>
@@ -436,19 +441,11 @@
             <tool>ICC430</tool>
         </forcedrebuild>
         <forcedrebuild>
-            <name>$PROJ_DIR$\ntt.c</name>
-            <tool>ICC430</tool>
-        </forcedrebuild>
-        <forcedrebuild>
-            <name>$PROJ_DIR$\kem.c</name>
-            <tool>ICC430</tool>
-        </forcedrebuild>
-        <forcedrebuild>
             <name>$PROJ_DIR$\main.c</name>
             <tool>ICC430</tool>
         </forcedrebuild>
         <forcedrebuild>
-            <name>$PROJ_DIR$\symmetric-shake.c</name>
+            <name>$PROJ_DIR$\ntt.c</name>
             <tool>ICC430</tool>
         </forcedrebuild>
         <forcedrebuild>
@@ -456,8 +453,28 @@
             <tool>ICC430</tool>
         </forcedrebuild>
         <forcedrebuild>
-            <name>$PROJ_DIR$\poly.c</name>
+            <name>$PROJ_DIR$\symmetric-shake.c</name>
             <tool>ICC430</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\verify.c</name>
+            <tool>ICC430</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\cbd.c</name>
+            <tool>ICC430</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\kem.c</name>
+            <tool>ICC430</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\polyvec.c</name>
+            <tool>ICC430</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>XLINK</tool>
         </forcedrebuild>
         <forcedrebuild>
             <name>[REBUILD_ALL]</name>
